@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import axiosWithAuth from '../utils/axiosWithAuth'
+import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 export const POST_LOGIN_START = 'POST_LOGIN_START'
 export const POST_LOGIN_SUCCESS = 'POST_LOGIN_SUCCESS'
