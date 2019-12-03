@@ -1,14 +1,16 @@
+//library imports
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+//styling
+import { StyledNavbar, StyledNavLink } from '../styles/StyledComps'
 
 const NavBar = () => {
   return (
-    <div>
-      <NavLink to='/'>Home</NavLink>
+    <StyledNavbar>
+      <StyledNavLink to='/'>Home</StyledNavLink>
       {/* <NavLink to='/about'>About</NavLink> */}
-      <NavLink to='/projects'>Projects</NavLink>
+      <StyledNavLink to='/projects'>Projects</StyledNavLink>
       {/* <NavLink to='/resume'>Resume</NavLink> */}
-    </div>
+    </StyledNavbar>
   )
 }
 
