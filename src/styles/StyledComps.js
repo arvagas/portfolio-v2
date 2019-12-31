@@ -19,7 +19,10 @@ export const StyledFooter = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-top: 1.6rem;
-  border-top: 1px solid black;
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
 `
 export const StyledSocialContainer = styled.div`
   display: flex;
@@ -28,7 +31,7 @@ export const StyledSocialContainer = styled.div`
 `
 export const StyledProfileImage = styled.img`
   border-radius: 50%;
-  width: 100px;
+  width: 75px;
 `
 export const StyledSocialLink = styled.a`
   margin-left: 2rem;
