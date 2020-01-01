@@ -7,8 +7,8 @@ const NavBar = () => {
   return (
     <StyledNavbar>
       <StyledNavLink to='/'>Home</StyledNavLink>
-      {/* <NavLink to='/about'>About</NavLink> */}
       <StyledNavLink to='/projects'>Projects</StyledNavLink>
+      <StyledNavLink to='/about'>About</StyledNavLink>
       {/* <NavLink to='/resume'>Resume</NavLink> */}
     </StyledNavbar>
   )
