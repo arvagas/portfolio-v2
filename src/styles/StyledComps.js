@@ -18,7 +18,7 @@ export const StyledFooter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 1.6rem;
+  padding: 2rem 0;
   position:absolute;
   left:0;
   bottom:0;
@@ -34,7 +34,7 @@ export const StyledProfileImage = styled.img`
   width: 75px;
 `
 export const StyledSocialLink = styled.a`
-  margin-left: 2rem;
+  margin-left: 5%;
 `
 export const StyledCopyright = styled.p`
   text-align: center;

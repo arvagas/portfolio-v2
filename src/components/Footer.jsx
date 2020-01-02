@@ -27,7 +27,7 @@ const Footer = () => {
         </StyledSocialLink>
       </StyledSocialContainer>
 
-      <StyledCopyright>Copyright &copy; Arvin Agas 2019</StyledCopyright>
+      {/* <StyledCopyright>Copyright &copy; Arvin Agas 2019</StyledCopyright> */}
     </StyledFooter>
   )
 }
