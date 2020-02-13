@@ -1,15 +1,15 @@
 //library imports
 import React from 'react'
 //styling
-import { StyledNavbar, StyledNavLink } from '../styles/StyledComps'
+import { StyledNavbar, StyledNavLink, StyledNavA } from '../styles/StyledComps'
 
 const NavBar = () => {
   return (
     <StyledNavbar>
-      <StyledNavLink to='/'>Home</StyledNavLink>
       <StyledNavLink to='/projects'>Projects</StyledNavLink>
       <StyledNavLink to='/about'>About</StyledNavLink>
-      {/* <NavLink to='/resume'>Resume</NavLink> */}
+      <StyledNavA href='https://www.dropbox.com/s/0h043huvigrazi4/Arvin%20Agas%20Resume.pdf?dl=0'>Resume</StyledNavA>
+      <StyledNavLink to='/contact'>Contact</StyledNavLink>
     </StyledNavbar>
   )
 }

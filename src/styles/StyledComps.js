@@ -11,6 +11,10 @@ export const StyledNavLink = styled(NavLink)`
   padding: 1rem;
   text-decoration: none;
 `
+export const StyledNavA = styled.a`
+  padding: 1rem;
+  text-decoration: none;
+`
 //End Navbar styling
 
 //Start Footer styling
