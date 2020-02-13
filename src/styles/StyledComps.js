@@ -4,8 +4,17 @@ import { NavLink } from 'react-router-dom'
 //Start Navbar styling
 export const StyledNavbar = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid black;
+`
+export const StyledNavHome = styled(NavLink)`
+padding: 1rem;
+text-decoration: none;
+`
+export const StyledRoutesContainer = styled.div`
+/* padding: 1rem;
+text-decoration: none; */
 `
 export const StyledNavLink = styled(NavLink)`
   padding: 1rem;
@@ -38,6 +47,9 @@ export const StyledProfileImage = styled.img`
   width: 75px;
 `
 export const StyledSocialLink = styled.a`
+  margin-left: 5%;
+`
+export const StyledContactLink = styled(NavLink)`
   margin-left: 5%;
 `
 export const StyledCopyright = styled.p`
