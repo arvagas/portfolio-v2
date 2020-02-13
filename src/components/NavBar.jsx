@@ -10,7 +10,7 @@ const NavBar = () => {
       <StyledRoutesContainer>
         <StyledNavLink to='/projects'>Projects</StyledNavLink>
         <StyledNavLink to='/about'>About</StyledNavLink>
-        <StyledNavA href='https://www.dropbox.com/s/0h043huvigrazi4/Arvin%20Agas%20Resume.pdf?dl=0' target="_blank">Resume</StyledNavA>
+        <StyledNavA href='https://www.dropbox.com/s/ppysuvlsdhfzhqx/Arvin%20Agas%20Resume.pdf?dl=0' target="_blank">Resume</StyledNavA>
         <StyledNavLink to='/contact'>Contact</StyledNavLink>
       </StyledRoutesContainer>
     </StyledNavbar>
