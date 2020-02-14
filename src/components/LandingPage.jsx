@@ -8,7 +8,7 @@ const LandingPage = () => {
   return (
     <StyledLandingPageContainer>
       <Typist cursor={{show: false}}>
-        <StyledName>My name is Arvin Agas.</StyledName>
+        <StyledName>I am Arvin Agas.</StyledName>
         <Typist.Delay ms={1000} />
         <StyledIAmA>Performer.</StyledIAmA>
         <StyledIAmA>TV Show Addict.</StyledIAmA>
