@@ -1,11 +1,21 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import Typist from 'react-typist'
 
-//Start Navbar styling
-export const StyledNavbar = styled.div`
+// Main App Styling
+export const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`
+// #######################################################
+
+// Navbar styling
+export const StyledNavbar = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 50px;
   border-bottom: 1px solid black;
 `
 export const StyledNavHome = styled(NavLink)`
@@ -24,18 +34,19 @@ export const StyledNavA = styled.a`
   padding: 1rem;
   text-decoration: none;
 `
-//End Navbar styling
+// #######################################################
 
-//Start Footer styling
-export const StyledFooter = styled.div`
+// Footer styling
+export const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem 0;
-  position:absolute;
+  min-height: 50px;
+  /* position:absolute;
   left:0;
   bottom:0;
-  right:0;
+  right:0; */
 `
 export const StyledSocialContainer = styled.div`
   display: flex;
@@ -55,4 +66,16 @@ export const StyledContactLink = styled(NavLink)`
 export const StyledCopyright = styled.p`
   text-align: center;
 `
-//End Footer styling
+// #######################################################
+
+// Landing Page
+export const StyledLandingPageContainer = styled.div`
+  flex-grow: 1;
+`
+export const StyledName = styled.h1`
+  font-size: 4rem;
+`
+export const StyledIAmA = styled.h2`
+  font-size: 2.8rem;
+`
+// #######################################################

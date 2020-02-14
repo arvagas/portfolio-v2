@@ -1,12 +1,21 @@
+// library imports
 import React from 'react'
+import Typist from 'react-typist'
+// styling
+import { StyledLandingPageContainer, StyledName, StyledIAmA } from '../styles/StyledComps'
 
 const LandingPage = () => {
   return (
-    <div>
-      {/* Carousel hero image(s) in the background */}
-      <h1>My name is Arvin Agas.</h1>
-      <h2>Full Stack Web Developer.</h2>
-    </div>
+    <StyledLandingPageContainer>
+      <Typist cursor={{show: false}}>
+        <StyledName>My name is Arvin Agas.</StyledName>
+        <Typist.Delay ms={1000} />
+        <StyledIAmA>Performer.</StyledIAmA>
+        <StyledIAmA>TV Show Addict.</StyledIAmA>
+        <StyledIAmA>Wanderluster.</StyledIAmA>
+        <StyledIAmA>Full Stack Web Developer.</StyledIAmA>
+      </Typist>
+    </StyledLandingPageContainer>
   )
 }
 

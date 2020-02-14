@@ -1,18 +1,18 @@
+// library imports
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-
-import PrivateRoute from './PrivateRoute'
+// component imports
 import LandingPage from '../LandingPage'
 import ProjectsPage from '../projects/ProjectsPage'
-// import LoginForm from '../forms/LoginForm'
 
 const AppRouter = () => {
   return (
-    <Switch>
+    <Switch style={{flex: 1}}>
       <Route exact path='/' component={LandingPage} />
       <Route path='/projects' component={ProjectsPage} />
-      {/* <Route path='/login' component={LoginForm} /> */}
-      {/* <PrivateRoute path='/dashboard' component={} /> */}
+      {/* <Route path='/about' component={} /> */}
+      {/* <Route path='/skills' component={} /> */}
+      {/* <Route path='/contact' component={} /> */}
     </Switch>
   )
 }

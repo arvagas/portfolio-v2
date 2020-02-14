@@ -1,11 +1,11 @@
-//library imports
+// library imports
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-//image imports
+// image imports
 import headshot from '../assets/headshot.jpg'
-//styling
+// styling
 import { StyledFooter, StyledSocialContainer, StyledProfileImage, StyledSocialLink, StyledContactLink, StyledCopyright } from '../styles/StyledComps'
 
 const Footer = () => {
