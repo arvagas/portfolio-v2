@@ -1,15 +1,13 @@
 // library imports
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
-// image imports
-import bg1 from '../assets/backgrounds/bg1.jpg'
+
 
 // Main App Styling
 export const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${bg1});
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -85,6 +83,7 @@ export const StyledLandingPageContainer = styled.div`
 export const StyledName = styled.h1`
   font-size: 6rem;
   text-align: center;
+  font-weight: bolder;
   color: white;
   margin-bottom: 1.6rem;
 `
