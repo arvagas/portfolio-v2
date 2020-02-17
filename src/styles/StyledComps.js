@@ -110,6 +110,8 @@ export const ModalOverlay = styled.div`
 `
 // Projects Modal
 export const StyledProjectsModal = styled.div`
+  display: flex;
+  flex-direction: column;
   position: fixed;
   z-index: 101;
   left: 50%;
@@ -122,5 +124,48 @@ export const StyledProjectsModal = styled.div`
   background-color: white;
   border-radius: 20px;
   padding: 20px;
+`
+export const StyledModalX = styled.div`
+  position: absolute;
+  right: 20px;
+  font-size: 2rem;
+  color: gray;
+  /* border: 1px solid grey; */
+  padding: 10px;
+  /* border-radius: 10px; */
+  cursor: pointer;
+`
+export const StyledModalTitle = styled.h1`
+  font-size: 3.2rem;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+`
+export const StyledModalPhoto = styled.img`
+  align-self: center;
+  max-width: 500px;
+  width: 100%;
+  margin: 2rem 0;
+`
+export const StyledModalMiddle = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+`
+export const StyledModalContent = styled.p`
+  font-size: 1.6rem;
+`
+export const StyledModalContentSpan = styled.span`
+  font-size: 1.6rem;
+`
+export const StyledModalBottom = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: 1px solid gray;
+`
+export const StyledModalLink = styled.a`
+  margin-left: 4rem;
 `
 // #######################################################
