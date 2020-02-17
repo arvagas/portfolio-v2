@@ -9,7 +9,13 @@ const ProjectsCard = ({ project }) => {
     <div>
       <img src={project.photo} alt={project.photoAlt}/>
       <h2>{project.title}</h2>
-
+      <div>
+        <a>Learn More</a>
+        <div>
+          <a>Deploy</a>
+          <a>Github</a>
+        </div>
+      </div>
     </div>
   )
 }
