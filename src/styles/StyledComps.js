@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 
-// Main App Styling
+// @@@@@@@@@@ Main App Styling
 export const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ export const StyledApp = styled.div`
 `
 // #######################################################
 
-// Navbar styling
+// @@@@@@@@@@ Navbar styling
 export const StyledNavbar = styled.header`
   display: flex;
   justify-content: space-between;
@@ -41,7 +41,7 @@ export const StyledNavA = styled.a`
 `
 // #######################################################
 
-// Footer styling
+// @@@@@@@@@@ Footer styling
 export const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
@@ -73,7 +73,7 @@ export const StyledCopyright = styled.p`
 `
 // #######################################################
 
-// Landing Page
+// @@@@@@@@@@ Landing Page
 export const StyledLandingPageContainer = styled.div`
   flex: 1;
   display: flex;
@@ -92,5 +92,35 @@ export const StyledIAmA = styled.h2`
   text-align: center;
   color: white;
   margin-bottom: 1rem;
+`
+// #######################################################
+
+// @@@@@@@@@@ Projects Page
+// Projects Card
+// Projects Modal Overlay
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  opacity: 0.4;
+`
+// Projects Modal
+export const StyledProjectsModal = styled.div`
+  position: fixed;
+  z-index: 101;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+  width: 100%;
+  max-height: 750px;
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
 `
 // #######################################################
