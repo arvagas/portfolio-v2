@@ -21,11 +21,14 @@ export const StyledNavbar = styled.header`
   justify-content: space-between;
   align-items: center;
   min-height: 50px;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
 `
 export const StyledNavHome = styled(NavLink)`
 padding: 1rem;
 text-decoration: none;
+font-size: 3rem;
+color: white;
+font-weight: bolder;
 `
 export const StyledRoutesContainer = styled.div`
 /* padding: 1rem;
@@ -34,10 +37,22 @@ text-decoration: none; */
 export const StyledNavLink = styled(NavLink)`
   padding: 1rem;
   text-decoration: none;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: white;
+  &:hover {
+    color: purple;
+  }
 `
 export const StyledNavA = styled.a`
   padding: 1rem;
   text-decoration: none;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: white;
+  &:hover {
+    color: purple;
+  }
 `
 // #######################################################
 
@@ -72,7 +87,8 @@ export const StyledSocialLink = styled.a`
   padding: 8px;
   color: purple;
   &:hover {
-    padding: 10px;
+    color: white;
+    background-color: purple;
   }
 `
 export const StyledContactLink = styled(NavLink)`
@@ -81,7 +97,8 @@ export const StyledContactLink = styled(NavLink)`
   padding: 8px;
   color: purple;
   &:hover {
-    padding: 10px;
+    color: white;
+    background-color: purple;
   }
 `
 export const StyledCopyright = styled.p`

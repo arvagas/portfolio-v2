@@ -6,13 +6,13 @@ import { StyledNavbar, StyledNavHome, StyledRoutesContainer, StyledNavLink, Styl
 const NavBar = () => {
   return (
     <StyledNavbar>
-      <StyledNavHome to='/'>Arvin Agas</StyledNavHome>
+      <StyledNavHome to='/'>ARVIN AGAS</StyledNavHome>
       <StyledRoutesContainer>
-        <StyledNavLink to='/projects'>Projects</StyledNavLink>
-        <StyledNavLink to='/about'>About</StyledNavLink>
-        <StyledNavLink to='/skills'>Skills</StyledNavLink>
+        <StyledNavLink to='/projects' activeClassName='active-nav'>Projects</StyledNavLink>
+        <StyledNavLink to='/about' activeClassName='active-nav'>About</StyledNavLink>
+        <StyledNavLink to='/skills' activeClassName='active-nav'>Skills</StyledNavLink>
         <StyledNavA href='https://www.dropbox.com/s/ppysuvlsdhfzhqx/Arvin%20Agas%20Resume.pdf?dl=0' target="_blank">Resume</StyledNavA>
-        <StyledNavLink to='/contact'>Contact</StyledNavLink>
+        <StyledNavLink to='/contact' activeClassName='active-nav'>Contact</StyledNavLink>
       </StyledRoutesContainer>
     </StyledNavbar>
   )
