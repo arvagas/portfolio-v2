@@ -247,6 +247,7 @@ export const StyledSkillsContainer = styled.div`
   align-self: center;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   /* background-color: black;
   border: 1px solid white; */
   position: absolute;

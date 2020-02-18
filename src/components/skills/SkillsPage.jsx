@@ -29,6 +29,11 @@ const SkillsPage = () => {
           <StyledSkillsText>React</StyledSkillsText>
         </StyledSkillsPair>
 
+        {/* <StyledSkillsPair>
+          <StyledSkillsIcon icon={} size="10x" color='#7749BD'/>
+          <StyledSkillsText>Redux</StyledSkillsText>
+        </StyledSkillsPair> */}
+
         <StyledSkillsPair>
           <FontAwesomeIcon icon={faNode} size="10x" color='#76B475'/>
           <StyledSkillsText>Node.JS</StyledSkillsText>
