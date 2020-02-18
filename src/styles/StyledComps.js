@@ -131,6 +131,7 @@ export const StyledIAmA = styled.h2`
 // @@@@@@@@@@ Projects Page
 export const StyledProjectsPage = styled.div`
   display: flex;
+  justify-content: center;
 `
 // Projects Card
 export const StyledCard = styled.div`
@@ -161,6 +162,7 @@ export const StyledCardBottom = styled.div`
 `
 export const StyledCardLink = styled.a`
   margin-left: 2rem;
+  color: purple;
 `
 // Projects Modal Overlay
 export const ModalOverlay = styled.div`
@@ -232,5 +234,6 @@ export const StyledModalBottom = styled.div`
 `
 export const StyledModalLink = styled.a`
   margin-left: 4rem;
+  color: purple;
 `
 // #######################################################
