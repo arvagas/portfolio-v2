@@ -107,7 +107,7 @@ export const StyledCopyright = styled.p`
 // #######################################################
 
 // @@@@@@@@@@ Landing Page
-export const StyledLandingPageContainer = styled.div`
+export const StyledLandingPage = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
@@ -235,5 +235,34 @@ export const StyledModalBottom = styled.div`
 export const StyledModalLink = styled.a`
   margin-left: 4rem;
   color: purple;
+`
+// #######################################################
+
+// @@@@@@@@@@ Skills Page
+export const StyledSkillsPage = styled.div`
+  display: flex;
+  justify-content: center;
+`
+export const StyledSkillsContainer = styled.div`
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  /* background-color: black;
+  border: 1px solid white; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`
+export const StyledSkillsPair = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+`
+export const StyledSkillsText = styled.p`
+  color: white;
+  font-size: 2.8rem;
 `
 // #######################################################

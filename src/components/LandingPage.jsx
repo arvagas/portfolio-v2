@@ -2,11 +2,11 @@
 import React from 'react'
 import Typist from 'react-typist'
 // styling
-import { StyledLandingPageContainer, StyledName, StyledIAmA } from '../styles/StyledComps'
+import { StyledLandingPage, StyledName, StyledIAmA } from '../styles/StyledComps'
 
 const LandingPage = () => {
   return (
-    <StyledLandingPageContainer>
+    <StyledLandingPage>
       <Typist cursor={{show: false}}>
         <StyledName>I am Arvin Agas.</StyledName>
         <Typist.Delay ms={1000} />
@@ -15,7 +15,7 @@ const LandingPage = () => {
         <StyledIAmA>Wanderluster.</StyledIAmA>
         <StyledIAmA>Full Stack Web Developer.</StyledIAmA>
       </Typist>
-    </StyledLandingPageContainer>
+    </StyledLandingPage>
   )
 }
 
