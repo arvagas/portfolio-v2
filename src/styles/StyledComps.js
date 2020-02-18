@@ -96,7 +96,39 @@ export const StyledIAmA = styled.h2`
 // #######################################################
 
 // @@@@@@@@@@ Projects Page
+export const StyledProjectsPage = styled.div`
+  display: flex;
+`
 // Projects Card
+export const StyledCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  margin: 2rem;
+  border-radius: 10px;
+  max-width: 350px;
+  width: 100%;
+`
+export const StyledCardTitle = styled.h2`
+  font-size: 2.4rem;
+  margin: 1rem 0 2rem;
+`
+export const StyledCardPhoto = styled.img`
+  max-width: 300px;
+  width: 100%;
+`
+export const StyledCardBottom = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`
+export const StyledCardLink = styled.a`
+  margin-left: 2rem;
+`
 // Projects Modal Overlay
 export const ModalOverlay = styled.div`
   position: fixed;

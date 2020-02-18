@@ -19,13 +19,13 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
         <StyledModalContent>Description: {project.desc}</StyledModalContent>
         <StyledModalContent>Role: {project.role}</StyledModalContent>
         <StyledModalContent>Responsibilities:</StyledModalContent>
-        {project.resp.map(item => (
-          <StyledModalContent>{item}</StyledModalContent>
+        {project.resp.map((item, index) => (
+          <StyledModalContent key={Date.now()+index}>{item}</StyledModalContent>
         ))}
         <div>
           <StyledModalContentSpan>Tech used: </StyledModalContentSpan>
           {project.tech.map((item, index) => (
-            <StyledModalContentSpan>{item}, </StyledModalContentSpan>
+            <StyledModalContentSpan key={Date.now()+index}>{item}, </StyledModalContentSpan>
           ))}
         </div>
       </StyledModalMiddle>
