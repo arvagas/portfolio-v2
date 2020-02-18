@@ -1,7 +1,7 @@
 // library imports
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 // image imports
 import headshot from '../assets/headshot.jpg'
@@ -19,7 +19,7 @@ const Footer = () => {
         </StyledSocialLink>
 
         <StyledSocialLink href='https://www.linkedin.com/in/arvinagas/' target="_blank">
-          <FontAwesomeIcon icon={faLinkedin} size="3x"/>
+          <FontAwesomeIcon icon={faLinkedinIn} size="3x"/>
         </StyledSocialLink>
 
         <StyledContactLink to='/contact'>

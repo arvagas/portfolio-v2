@@ -54,19 +54,35 @@ export const StyledFooter = styled.footer`
   right:0;
 `
 export const StyledSocialContainer = styled.div`
+  align-self: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  max-width: 500px;
+  width: 100%;
 `
 export const StyledProfileImage = styled.img`
   border-radius: 50%;
   width: 75px;
+  border: 5px solid purple;
 `
 export const StyledSocialLink = styled.a`
-  margin-left: 5%;
+  border-radius: 50%;
+  background-color: white;
+  padding: 8px;
+  color: purple;
+  &:hover {
+    padding: 10px;
+  }
 `
 export const StyledContactLink = styled(NavLink)`
-  margin-left: 5%;
+  border-radius: 50%;
+  background-color: white;
+  padding: 8px;
+  color: purple;
+  &:hover {
+    padding: 10px;
+  }
 `
 export const StyledCopyright = styled.p`
   text-align: center;
