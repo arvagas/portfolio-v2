@@ -16,8 +16,7 @@ const ContactForm = () => {
   const handleChange = (event) => {
     let { name, value } = event.target
 
-    // data validation
-    console.log(name)
+    // add data validation
     
     // update values
     switch (name) {
@@ -37,10 +36,26 @@ const ContactForm = () => {
 
   const onSubmit = (event) => {
     event.preventDefault()
-    // reset form after success
-    setNameInput('')
-    setEmailInput('')
-    setMessageInput('')
+    let sendInfo = { name: nameInput, email: emailInput, message: messageInput }
+
+    // attempt to send email
+    fetch('https://arvin-agas-portfolio.herokuapp.com/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(sendInfo)
+    })
+    .then(res => res.json())
+    .then(jsonRes => {
+      if (jsonRes.message === 'Success') {
+        alert('Message has been sent successfully to arvagas@gmail.com!')
+        // reset form after success
+        setNameInput('')
+        setEmailInput('')
+        setMessageInput('')
+      } else alert('Message was unable to be sent. Please try again later.')
+    })
   }
 
   return (
