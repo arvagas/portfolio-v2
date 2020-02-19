@@ -85,7 +85,7 @@ export const ProjectsData = [
   {
     title: 'Airlytics',
     tag: "Get optimal rates for your AirBnB listings.",
-    desc: "This project aimed to calculate the best possible rate a host should list for a property for AirBnB usage. Based on properties that a house or apartment may or may not have, an algorithm based on data from hundreds of AirBnB listings will output a recommended price range to use for maximum profit.",
+    desc: "This project aimed to calculate the best possible rate a host should list for a property for AirBnB usage. Based on properties that a house or apartment may or may not have, an algorithm devised on data from hundreds of AirBnB listings will output a recommended price range to use for maximum profit.",
     deploy: 'https://airlytics.netlify.com/',
     github: 'https://github.com/airbnb-price-opt',
     mockup: '',

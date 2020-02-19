@@ -290,7 +290,7 @@ export const StyledContactPage = styled.div`
   display: flex;
   justify-content: center;
 `
-export const StyledContactForm = styled.div`
+export const StyledContactForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -303,12 +303,16 @@ export const StyledContactForm = styled.div`
   transform: translate(-50%, -50%);
   max-width: 450px;
   width: 100%;
-  max-height: 500px;
+  max-height: 550px;
   height: 100%;
   padding: 2rem;
 `
 export const StyledContactHeader = styled.h2`
   font-size: 3.2rem;
+`
+export const StyledContactNotice = styled.p`
+  font-size: 1.6rem;
+  text-align: center;
 `
 export const StyledContactLabel = styled.label`
   display: flex;
@@ -326,9 +330,27 @@ export const StyledContactTextArea = styled.textarea`
   font-size: 1.6rem;
   margin: 5px 0 0;
 `
+export const StyledContactError = styled.p`
+  font-size: 1.4rem;
+  color: red;
+  text-align: center;
+`
 export const StyledContactSubmit = styled.button`
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid purple;
+  &:hover {
+    color: white;
+    background-color: purple;
+    border: 1px solid white;
+  }
   &:disabled {
-    background-color: red;
+    color: white;
+    background-color: plum;
+    border: 1px solid white;
   }
 `
 // #######################################################
