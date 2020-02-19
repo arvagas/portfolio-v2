@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faExternalLinkAlt, faPalette } from '@fortawesome/free-solid-svg-icons'
 // styling
 import { StyledProjectsModal, StyledModalX, StyledModalTitle, StyledModalPhoto, StyledModalMiddle, StyledModalContent, StyledModalContentSpan, StyledModalBottom, StyledModalLink } from '../../styles/StyledComps'
-import bg1 from '../../assets/backgrounds/bg1.jpg'
 
 const ProjectsModal = ({ project, showModal, handleModal }) => {
 
@@ -13,14 +12,13 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
     <StyledProjectsModal>
       <StyledModalTitle>{project.title}</StyledModalTitle>
       <StyledModalX onClick={event => handleModal(event)}>X</StyledModalX>
-      <StyledModalPhoto src={bg1}/>
+      <StyledModalPhoto src={project.gif} alt={project.gifAlt}/>
 
       <StyledModalMiddle>
         <StyledModalContent>{project.desc}</StyledModalContent>
         
         <div>
           <StyledModalContentSpan>Built with: </StyledModalContentSpan>
-          {console.log(project.tech.length)}
           {project.tech.map((item, index) => (
             <StyledModalContentSpan key={Date.now()+index}>{project.tech.length > index+1 ? `${item}, ` : item}</StyledModalContentSpan>
           ))}

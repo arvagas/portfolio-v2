@@ -139,8 +139,11 @@ export const StyledIAmA = styled.h2`
 
 // @@@@@@@@@@ Projects Page
 export const StyledProjectsPage = styled.div`
+  flex: 1;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 `
 // Projects Card
 export const StyledCard = styled.div`
@@ -153,7 +156,7 @@ export const StyledCard = styled.div`
   padding: 20px;
   margin: 2rem;
   border-radius: 10px;
-  max-width: 350px;
+  max-width: 400px;
   width: 100%;
 `
 export const StyledCardTitle = styled.h2`
@@ -161,7 +164,7 @@ export const StyledCardTitle = styled.h2`
   margin: 1rem 0 2rem;
 `
 export const StyledCardPhoto = styled.img`
-  max-width: 300px;
+  max-width: 350px;
   width: 100%;
 `
 export const StyledCardBottom = styled.div`
@@ -223,7 +226,7 @@ export const StyledModalTitle = styled.h1`
 `
 export const StyledModalPhoto = styled.img`
   align-self: center;
-  max-width: 500px;
+  max-width: 750px;
   width: 100%;
   margin: 2rem 0;
 `

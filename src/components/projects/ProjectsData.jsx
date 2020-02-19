@@ -1,3 +1,9 @@
+// image imports
+import spacemudPhoto from '../../assets/projects/spacemud.png'
+import appraiserbffPhoto from '../../assets/projects/appraiserbff.png'
+import betterbusinessPhoto from '../../assets/projects/betterbusiness.png'
+import airlyticsPhoto from '../../assets/projects/airlytics.png'
+
 export const ProjectsData = [
   {
     title: '',
@@ -31,9 +37,9 @@ export const ProjectsData = [
       'Django',
       'Pusher'
     ],
-    photo: '',
+    photo: spacemudPhoto,
     photoAlt: 'Landing page of Space MUD',
-    gif: '',
+    gif: spacemudPhoto,
     gifAlt: 'Brief demo of Space MUD',
   },
   {
@@ -53,9 +59,45 @@ export const ProjectsData = [
       'Knex.js',
       'Supertest',
     ],
-    photo: '',
+    photo: appraiserbffPhoto,
     photoAlt: 'Landing page of Appraiser BFF',
-    gif: 'https://www.loom.com/embed/470af25eea864b0ea7a566d9ac9c937c',
+    gif: appraiserbffPhoto,
+    gifAlt: 'Brief demo of Appraiser BFF',
+  },
+  {
+    title: 'Better Business',
+    tag: "Increase the review rating of a business by focusing on the negative.",
+    desc: "Better Business aims to increase the review ratings of an establishment by focusing on key words in a Yelp or Google Review. A thorough parse of each review will yield common words or phrases that appear on other write-ups, thus allowing an owner to concentrate on what needs to be fixed and ignore fixing what already works.",
+    deploy: 'https://better-business.netlify.com/',
+    github: 'https://github.com/Business-Recommendation',
+    mockup: '',
+    tech: [
+      'React',
+      'React-Redux',
+      'Formik',
+      'Styled-Components',
+    ],
+    photo: betterbusinessPhoto,
+    photoAlt: 'Landing page of Appraiser BFF',
+    gif: betterbusinessPhoto,
+    gifAlt: 'Brief demo of Appraiser BFF',
+  },
+  {
+    title: 'Airlytics',
+    tag: "Get optimal rates for your AirBnB listings.",
+    desc: "This project aimed to calculate the best possible rate a host should list for a property for AirBnB usage. Based on properties that a house or apartment may or may not have, an algorithm based on data from hundreds of AirBnB listings will output a recommended price range to use for maximum profit.",
+    deploy: 'https://airlytics.netlify.com/',
+    github: 'https://github.com/airbnb-price-opt',
+    mockup: '',
+    tech: [
+      'React',
+      'React-Redux',
+      'Formik',
+      'Styled-Components',
+    ],
+    photo: airlyticsPhoto,
+    photoAlt: 'Landing page of Appraiser BFF',
+    gif: airlyticsPhoto,
     gifAlt: 'Brief demo of Appraiser BFF',
   },
 ]

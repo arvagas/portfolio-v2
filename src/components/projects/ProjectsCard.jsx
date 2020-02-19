@@ -7,7 +7,6 @@ import ProjectsModalOverlay from './ProjectsModalOverlay'
 import ProjectsModal from './ProjectsModal'
 // styling
 import { StyledCard, StyledCardTitle, StyledCardPhoto, StyledCardBottom, StyledFontAwesomeIcon, StyledCardLink } from '../../styles/StyledComps'
-import bg1 from '../../assets/backgrounds/bg1.jpg'
 
 const ProjectsCard = ({ project }) => {
   const [showModal, setShowModal] = useState(false)
@@ -20,7 +19,7 @@ const ProjectsCard = ({ project }) => {
   if (!project.title || !project.desc) return null;
   return (
     <StyledCard>
-      <StyledCardPhoto src={bg1} alt={project.photoAlt}/>
+      <StyledCardPhoto src={project.photo} alt={project.photoAlt}/>
       <StyledCardTitle>{project.title}</StyledCardTitle>
       <StyledCardBottom>
         <StyledFontAwesomeIcon icon={faBook} size="2x" title='Learn More' onClick={event => handleModal(event)}/>
