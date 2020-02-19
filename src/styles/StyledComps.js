@@ -35,9 +35,9 @@ export const StyledRoutesContainer = styled.div`
 /* padding: 1rem;
 text-decoration: none; */
 `
-const activeNav = 'active-nav'
+const activenav = 'active-nav'
 export const StyledNavLink = styled(NavLink).attrs({
-  activeNav
+  activenav
 })`
   padding: 1rem;
   text-decoration: none;
@@ -47,7 +47,7 @@ export const StyledNavLink = styled(NavLink).attrs({
   &:hover {
     color: purple;
   }
-  &.${activeNav} {
+  &.${activenav} {
     font-weight: bolder;
     color: purple;
     -webkit-text-stroke: 0.5px white;
@@ -282,5 +282,23 @@ export const StyledSkillsPair = styled.div`
 export const StyledSkillsText = styled.p`
   color: white;
   font-size: 2.8rem;
+`
+// #######################################################
+
+// @@@@@@@@@@ Contact Page
+export const StyledContactPage = styled.div`
+  display: flex;
+  justify-content: center;
+`
+export const StyledContactForm = styled.div`
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `
 // #######################################################
