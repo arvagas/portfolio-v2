@@ -1,7 +1,7 @@
 // library imports
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 // styling
-import { StyledContactForm } from '../../styles/StyledComps'
+import { StyledContactForm, StyledContactHeader, StyledContactLabel, StyledContactInput, StyledContactTextArea, StyledContactSubmit } from '../../styles/StyledComps'
 
 const ContactForm = () => {
   const [nameInput, setNameInput] = useState('')
@@ -12,6 +12,7 @@ const ContactForm = () => {
     emailInputError: '',
     messageInputError: ''
   })
+  const refBtn = useRef()
 
   const handleChange = (event) => {
     let { name, value } = event.target
@@ -38,6 +39,9 @@ const ContactForm = () => {
     event.preventDefault()
     let sendInfo = { name: nameInput, email: emailInput, message: messageInput }
 
+    // disable button to prevent multiple emails being sent
+    refBtn.current.setAttribute('disabled', true)
+
     // attempt to send email
     fetch('https://arvin-agas-portfolio.herokuapp.com/email/send', {
       method: 'POST',
@@ -55,27 +59,28 @@ const ContactForm = () => {
         setEmailInput('')
         setMessageInput('')
       } else alert('Message was unable to be sent. Please try again later.')
+      
+      // enable button for next use
+      refBtn.current.removeAttribute('disabled')
     })
   }
 
   return (
-    <StyledContactForm>
-      <h1>Contact Me</h1>
-      <form onSubmit={onSubmit} noValidate>
-        <label>
-          Name
-          <input type='text' name='name' value={nameInput} onChange={event => handleChange(event)} placeholder='John Smith' required/>
-        </label>
-        <label>
-          Email
-          <input type='email' name='email' value={emailInput} onChange={event => handleChange(event)} placeholder='example@gmail.com' required/>
-        </label>
-        <label>
-          Message
-          <textarea name='message' value={messageInput} onChange={event => handleChange(event)} placeholder='Write your message here...' required/>
-        </label>
-        <button type='submit'>Submit</button>
-      </form>
+    <StyledContactForm onSubmit={onSubmit} noValidate>
+      <StyledContactHeader>Contact Me</StyledContactHeader>
+      <StyledContactLabel>
+        Name:
+        <StyledContactInput type='text' name='name' value={nameInput} onChange={event => handleChange(event)} placeholder='John Smith' required/>
+      </StyledContactLabel>
+      <StyledContactLabel>
+        Email:
+        <StyledContactInput type='email' name='email' value={emailInput} onChange={event => handleChange(event)} placeholder='example@gmail.com' required/>
+      </StyledContactLabel>
+      <StyledContactLabel>
+        Message:
+        <StyledContactTextArea rows='10' name='message' value={messageInput} onChange={event => handleChange(event)} placeholder='Write your message here...' required/>
+      </StyledContactLabel>
+      <StyledContactSubmit type='submit' ref={refBtn}>Submit</StyledContactSubmit>
     </StyledContactForm>
   )
 }

@@ -291,14 +291,44 @@ export const StyledContactPage = styled.div`
   justify-content: center;
 `
 export const StyledContactForm = styled.div`
-  align-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
+  border-radius: 20px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  max-width: 450px;
+  width: 100%;
+  max-height: 500px;
+  height: 100%;
+  padding: 2rem;
+`
+export const StyledContactHeader = styled.h2`
+  font-size: 3.2rem;
+`
+export const StyledContactLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  width: 100%;
+`
+export const StyledContactInput = styled.input`
+  padding: 5px 10px;
+  font-size: 1.6rem;
+  margin: 5px 0 0;
+`
+export const StyledContactTextArea = styled.textarea`
+  padding: 5px 10px;
+  font-size: 1.6rem;
+  margin: 5px 0 0;
+`
+export const StyledContactSubmit = styled.button`
+  &:disabled {
+    background-color: red;
+  }
 `
 // #######################################################
