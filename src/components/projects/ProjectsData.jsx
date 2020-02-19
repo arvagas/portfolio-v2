@@ -1,62 +1,51 @@
 export const ProjectsData = [
-  // {
-  //   title: '',
-  //   role: '',
-  //   desc: '',
-  //   deploy: '',
-  //   github: '',
-  //   mockup: '',
-  //   resp: [
-  //     '',
-  //     '',
-  //     ''
-  //   ],
-  //   tech: [
-  //     '',
-  //     '',
-  //     ''
-  //   ],
-  //   photo: '',
-  //   photoAlt: '',
-  //   gif: '',
-  //   gifAlt: '',
-  // },
+  {
+    title: '',
+    tag: "",
+    desc: "",
+    deploy: '',
+    github: '',
+    mockup: '',
+    tech: [
+      '',
+      '',
+      ''
+    ],
+    photo: '',
+    photoAlt: 'Landing page of ',
+    gif: '',
+    gifAlt: 'Brief demo of ',
+  },
   {
     title: 'Space MUD',
-    role: 'Full Stack',
-    desc: 'A randomly generated multi-user dungeon experience set in space.',
+    tag: "A randomly generated multi-user dungeon experience set in an abandoned spacecraft.",
+    desc: "A one week project built by myself and four other developers. The Django framework was utilized to generate and serve a map, as well as provide additional endpoints for player interaction within the game.",
     deploy: 'https://vibrant-noyce-dc1ddd.netlify.com/',
     github: 'https://github.com/CSBeastMode',
     mockup: '',
-    resp: [
-      'Set up a REST API in Django, allowing the React front end to communicate with the back end to deliver information seamlessly.',
-      'Integrated Pusher into the back and front end to allow users to effortlessly communicate with one another in real time.',
-    ],
     tech: [
       'React',
       'Terminal-in-React',
-      'Semantic-UI',
       'Styled-Components',
       'Python',
-      'Django'
+      'Django',
+      'Pusher'
     ],
     photo: '',
-    photoAlt: '',
+    photoAlt: 'Landing page of Space MUD',
     gif: '',
-    gifAlt: '',
+    gifAlt: 'Brief demo of Space MUD',
   },
   {
     title: 'Appraiser BFF',
-    role: 'Backend',
-    desc: 'Web app designed to assist in the valuation of a homeowner"s" property.',
+    tag: "Web app designed to assist in the valuation of a homeowner's property.",
+    desc: "The goal of this project was to provide an estimated valuation of a homeowner's property determined by select features, with calculations based on existing aggregated data. As the backend developer, I created a RESTful API that handled user registration and login, property listings, as well as retrieved the calculated price that is returned from the data science model.",
     deploy: 'http://www.appraiserbff.xyz/',
     github: 'https://github.com/bw-appraisers-bff',
     mockup: '',
-    resp: [
-      'Built a back end to handle user registration, profiles, and property listings.',
-      'Handled the retrieval and storage of data calculated via the data science algorithm.',
-    ],
     tech: [
+      'React',
+      'React-Redux',
       'Node',
       'Express',
       'Bcrypt.js',
@@ -65,8 +54,8 @@ export const ProjectsData = [
       'Supertest',
     ],
     photo: '',
-    photoAlt: '',
-    gif: '',
-    gifAlt: '',
+    photoAlt: 'Landing page of Appraiser BFF',
+    gif: 'https://www.loom.com/embed/470af25eea864b0ea7a566d9ac9c937c',
+    gifAlt: 'Brief demo of Appraiser BFF',
   },
 ]

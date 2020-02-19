@@ -16,16 +16,13 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
       <StyledModalPhoto src={bg1}/>
 
       <StyledModalMiddle>
-        <StyledModalContent>Description: {project.desc}</StyledModalContent>
-        <StyledModalContent>Role: {project.role}</StyledModalContent>
-        <StyledModalContent>Responsibilities:</StyledModalContent>
-        {project.resp.map((item, index) => (
-          <StyledModalContent key={Date.now()+index}>{item}</StyledModalContent>
-        ))}
+        <StyledModalContent>{project.desc}</StyledModalContent>
+        
         <div>
-          <StyledModalContentSpan>Tech used: </StyledModalContentSpan>
+          <StyledModalContentSpan>Built with: </StyledModalContentSpan>
+          {console.log(project.tech.length)}
           {project.tech.map((item, index) => (
-            <StyledModalContentSpan key={Date.now()+index}>{item}, </StyledModalContentSpan>
+            <StyledModalContentSpan key={Date.now()+index}>{project.tech.length > index+1 ? `${item}, ` : item}</StyledModalContentSpan>
           ))}
         </div>
       </StyledModalMiddle>
@@ -33,16 +30,16 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
       <StyledModalBottom>
         {!project.mockup ? '' : (
           <StyledModalLink href={project.mockup} target="_blank">
-            <FontAwesomeIcon icon={faPalette} size="3x"/>
+            <FontAwesomeIcon icon={faPalette} size="3x" title='View Mockup'/>
           </StyledModalLink>
         )}
 
         <StyledModalLink href={project.github} target="_blank">
-          <FontAwesomeIcon icon={faCode} size="3x"/>
+          <FontAwesomeIcon icon={faCode} size="3x" title='View Code'/>
         </StyledModalLink>
 
         <StyledModalLink href={project.deploy} target="_blank">
-          <FontAwesomeIcon icon={faExternalLinkAlt} size="3x"/>
+          <FontAwesomeIcon icon={faExternalLinkAlt} size="3x" title='View Site'/>
         </StyledModalLink>
       </StyledModalBottom>
     </StyledProjectsModal>

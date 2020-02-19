@@ -1,6 +1,7 @@
 // library imports
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 // @@@@@@@@@@ Main App Styling
@@ -34,7 +35,10 @@ export const StyledRoutesContainer = styled.div`
 /* padding: 1rem;
 text-decoration: none; */
 `
-export const StyledNavLink = styled(NavLink)`
+const activeNav = 'active-nav'
+export const StyledNavLink = styled(NavLink).attrs({
+  activeNav
+})`
   padding: 1rem;
   text-decoration: none;
   font-size: 3rem;
@@ -42,6 +46,11 @@ export const StyledNavLink = styled(NavLink)`
   color: white;
   &:hover {
     color: purple;
+  }
+  &.${activeNav} {
+    font-weight: bolder;
+    color: purple;
+    -webkit-text-stroke: 0.5px white;
   }
 `
 export const StyledNavA = styled.a`
@@ -160,6 +169,10 @@ export const StyledCardBottom = styled.div`
   display: flex;
   justify-content: space-between;
 `
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  color: purple;
+  cursor: pointer;
+`
 export const StyledCardLink = styled.a`
   margin-left: 2rem;
   color: purple;
@@ -218,13 +231,14 @@ export const StyledModalMiddle = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: space-between;
+  margin-bottom: 1rem;
 `
 export const StyledModalContent = styled.p`
-  font-size: 1.6rem;
+  font-size: 2rem;
 `
 export const StyledModalContentSpan = styled.span`
-  font-size: 1.6rem;
+  font-size: 2rem;
 `
 export const StyledModalBottom = styled.div`
   display: flex;

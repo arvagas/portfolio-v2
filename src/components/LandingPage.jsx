@@ -10,9 +10,9 @@ const LandingPage = () => {
       <Typist cursor={{show: false}}>
         <StyledName>I am Arvin Agas.</StyledName>
         <Typist.Delay ms={1000} />
-        <StyledIAmA>Performer.</StyledIAmA>
+        {/* <StyledIAmA>Performer.</StyledIAmA>
         <StyledIAmA>TV Show Addict.</StyledIAmA>
-        <StyledIAmA>Wanderluster.</StyledIAmA>
+        <StyledIAmA>Wanderluster.</StyledIAmA> */}
         <StyledIAmA>Full Stack Web Developer.</StyledIAmA>
       </Typist>
     </StyledLandingPage>

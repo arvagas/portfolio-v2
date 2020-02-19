@@ -1,12 +1,12 @@
 // library imports
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faExternalLinkAlt, faPalette } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faExternalLinkAlt, faPalette, faBook } from '@fortawesome/free-solid-svg-icons'
 // component imports
 import ProjectsModalOverlay from './ProjectsModalOverlay'
 import ProjectsModal from './ProjectsModal'
 // styling
-import { StyledCard, StyledCardTitle, StyledCardPhoto, StyledCardBottom, StyledCardLink } from '../../styles/StyledComps'
+import { StyledCard, StyledCardTitle, StyledCardPhoto, StyledCardBottom, StyledFontAwesomeIcon, StyledCardLink } from '../../styles/StyledComps'
 import bg1 from '../../assets/backgrounds/bg1.jpg'
 
 const ProjectsCard = ({ project }) => {
@@ -17,26 +17,27 @@ const ProjectsCard = ({ project }) => {
     setShowModal(!showModal)
   }
 
+  if (!project.title || !project.desc) return null;
   return (
     <StyledCard>
       <StyledCardPhoto src={bg1} alt={project.photoAlt}/>
       <StyledCardTitle>{project.title}</StyledCardTitle>
       <StyledCardBottom>
-        <button onClick={event => handleModal(event)}>Read More</button>
+        <StyledFontAwesomeIcon icon={faBook} size="2x" title='Learn More' onClick={event => handleModal(event)}/>
         
         <div>
           {!project.mockup ? '' : (
             <StyledCardLink href={project.mockup} target="_blank">
-              <FontAwesomeIcon icon={faPalette} size="2x"/>
+              <FontAwesomeIcon icon={faPalette} size="2x" title='View Mockup'/>
             </StyledCardLink>
           )}
 
           <StyledCardLink href={project.github} target="_blank">
-            <FontAwesomeIcon icon={faCode} size="2x"/>
+            <FontAwesomeIcon icon={faCode} size="2x" title='View Code'/>
           </StyledCardLink>
 
           <StyledCardLink href={project.deploy} target="_blank">
-            <FontAwesomeIcon icon={faExternalLinkAlt} size="2x"/>
+            <FontAwesomeIcon icon={faExternalLinkAlt} size="2x"  title='View Site'/>
           </StyledCardLink>
         </div>
       </StyledCardBottom>
