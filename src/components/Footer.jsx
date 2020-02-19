@@ -14,15 +14,15 @@ const Footer = () => {
       <StyledSocialContainer>
         <StyledProfileImage src={headshot} alt='Picture of Arvin Agas'/>
 
-        <StyledSocialLink href='https://www.github.com/arvagas' target="_blank">
+        <StyledSocialLink href='https://www.github.com/arvagas' target="_blank" delay='2s'>
           <FontAwesomeIcon icon={faGithub} size="3x" title='Visit Github'/>
         </StyledSocialLink>
 
-        <StyledSocialLink href='https://www.linkedin.com/in/arvinagas/' target="_blank">
+        <StyledSocialLink href='https://www.linkedin.com/in/arvinagas/' target="_blank" delay='3s'>
           <FontAwesomeIcon icon={faLinkedinIn} size="3x" title='Visit LinkedIn'/>
         </StyledSocialLink>
 
-        <StyledContactLink to='/contact'>
+        <StyledContactLink to='/contact' delay='4s'>
           <FontAwesomeIcon icon={faEnvelope} size="3x" title='Email Arvin'/>
         </StyledContactLink>
       </StyledSocialContainer>

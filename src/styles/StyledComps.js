@@ -1,8 +1,13 @@
 // library imports
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fadeIn, fadeInDown, rollIn } from 'react-animations'
 
+// animations
+const fadeInAnimation = keyframes`${fadeIn}`
+const fadeInDownAnimation = keyframes`${fadeInDown}`
+const rollInAnimation = keyframes`${rollIn}`
 
 // @@@@@@@@@@ Main App Styling
 export const StyledApp = styled.div`
@@ -23,6 +28,7 @@ export const StyledNavbar = styled.header`
   align-items: center;
   min-height: 50px;
   /* border-bottom: 1px solid black; */
+  animation: 2s ${fadeInDownAnimation};
 `
 export const StyledNavHome = styled(NavLink)`
 padding: 1rem;
@@ -89,12 +95,16 @@ export const StyledProfileImage = styled.img`
   border-radius: 50%;
   width: 75px;
   border: 5px solid purple;
+  animation: 2s ${rollInAnimation} forwards;
 `
 export const StyledSocialLink = styled.a`
   border-radius: 50%;
   background-color: white;
   padding: 8px;
   color: purple;
+  opacity: 0;
+  animation: 1s ${rollInAnimation} forwards;
+  animation-delay: ${props => props.delay};
   &:hover {
     color: white;
     background-color: purple;
@@ -105,6 +115,9 @@ export const StyledContactLink = styled(NavLink)`
   background-color: white;
   padding: 8px;
   color: purple;
+  opacity: 0;
+  animation: 1s ${rollInAnimation} forwards;
+  animation-delay: ${props => props.delay};
   &:hover {
     color: white;
     background-color: purple;
@@ -144,6 +157,7 @@ export const StyledProjectsPage = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  animation: 1s ${fadeInAnimation};
 `
 // Projects Card
 export const StyledCard = styled.div`
@@ -259,6 +273,7 @@ export const StyledModalLink = styled.a`
 export const StyledSkillsPage = styled.div`
   display: flex;
   justify-content: center;
+  animation: 1s ${fadeInAnimation};
 `
 export const StyledSkillsContainer = styled.div`
   align-self: center;
@@ -289,6 +304,7 @@ export const StyledSkillsText = styled.p`
 export const StyledContactPage = styled.div`
   display: flex;
   justify-content: center;
+  animation: 1s ${fadeInAnimation};
 `
 export const StyledContactForm = styled.form`
   display: flex;
