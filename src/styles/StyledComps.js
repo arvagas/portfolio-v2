@@ -2,12 +2,13 @@
 import styled, { keyframes } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fadeIn, fadeInDown, rollIn } from 'react-animations'
+import { fadeIn, fadeInDown, rollIn, pulse } from 'react-animations'
 
 // animations
 const fadeInAnimation = keyframes`${fadeIn}`
 const fadeInDownAnimation = keyframes`${fadeInDown}`
 const rollInAnimation = keyframes`${rollIn}`
+const pulseAnimation = keyframes`${pulse}`
 
 // @@@@@@@@@@ Main App Styling
 export const StyledApp = styled.div`
@@ -191,10 +192,16 @@ export const StyledCardBottom = styled.div`
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   color: purple;
   cursor: pointer;
+  &:hover {
+    animation: 1s ${pulseAnimation} infinite 0s;
+  }
 `
 export const StyledCardLink = styled.a`
   margin-left: 2rem;
   color: purple;
+  &:hover {
+    animation: 1s ${pulseAnimation} infinite 0s;
+  }
 `
 // Projects Modal Overlay
 export const ModalOverlay = styled.div`
@@ -268,6 +275,9 @@ export const StyledModalBottom = styled.div`
 export const StyledModalLink = styled.a`
   margin-left: 4rem;
   color: purple;
+  &:hover {
+    animation: 1s ${pulseAnimation} infinite 0s;
+  }
 `
 // #######################################################
 

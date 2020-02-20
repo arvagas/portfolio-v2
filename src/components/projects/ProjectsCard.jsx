@@ -1,6 +1,5 @@
 // library imports
 import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faExternalLinkAlt, faPalette, faBook } from '@fortawesome/free-solid-svg-icons'
 // component imports
 import ProjectsModalOverlay from './ProjectsModalOverlay'
@@ -27,16 +26,16 @@ const ProjectsCard = ({ project }) => {
         <div>
           {!project.mockup ? '' : (
             <StyledCardLink href={project.mockup} target="_blank">
-              <FontAwesomeIcon icon={faPalette} size="2x" title='View Mockup'/>
+              <StyledFontAwesomeIcon icon={faPalette} size="2x" title='View Mockup'/>
             </StyledCardLink>
           )}
 
           <StyledCardLink href={project.github} target="_blank">
-            <FontAwesomeIcon icon={faCode} size="2x" title='View Code'/>
+            <StyledFontAwesomeIcon icon={faCode} size="2x" title='View Code'/>
           </StyledCardLink>
 
           <StyledCardLink href={project.deploy} target="_blank">
-            <FontAwesomeIcon icon={faExternalLinkAlt} size="2x"  title='View Site'/>
+            <StyledFontAwesomeIcon icon={faExternalLinkAlt} size="2x"  title='View Site'/>
           </StyledCardLink>
         </div>
       </StyledCardBottom>
