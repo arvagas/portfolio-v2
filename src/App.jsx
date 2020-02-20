@@ -9,7 +9,7 @@ import bg1 from './assets/backgrounds/bg1.jpg'
 import bg2 from './assets/backgrounds/bg2.jpg'
 import bg3 from './assets/backgrounds/bg3.jpg'
 // styling
-import { StyledApp } from './styles/StyledComps'
+import { StyledApp, StyledHeroImage } from './styles/StyledComps'
 import './styles/index.scss'
 
 const getRandomInt = (max) => {
@@ -46,10 +46,12 @@ const App = () => {
   // })
   
   return (
-    <StyledApp style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${bgImg})` }}>
-      <NavBar />
-      <AppRouter />
-      <Footer />
+    <StyledApp>
+      <StyledHeroImage style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${bgImg})` }}>
+        <NavBar />
+        <AppRouter />
+        <Footer />
+      </StyledHeroImage>
     </StyledApp>
   )
 }

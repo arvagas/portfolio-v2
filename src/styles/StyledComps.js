@@ -11,6 +11,8 @@ const rollInAnimation = keyframes`${rollIn}`
 
 // @@@@@@@@@@ Main App Styling
 export const StyledApp = styled.div`
+`
+export const StyledHeroImage = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -31,11 +33,11 @@ export const StyledNavbar = styled.header`
   animation: 2s ${fadeInDownAnimation};
 `
 export const StyledNavHome = styled(NavLink)`
-padding: 1rem;
-text-decoration: none;
-font-size: 3rem;
-color: white;
-font-weight: bolder;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 3rem;
+  color: white;
+  font-weight: bolder;
 `
 export const StyledRoutesContainer = styled.div`
 /* padding: 1rem;
