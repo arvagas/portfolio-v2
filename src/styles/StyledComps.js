@@ -180,9 +180,27 @@ export const StyledCardTitle = styled.h2`
   font-size: 2.4rem;
   margin: 1rem 0 2rem;
 `
-export const StyledCardPhoto = styled.img`
+export const StyledCardPhotoContainer = styled.div`
+  background-color: lightgray;
+  position: relative;
   max-width: 350px;
   width: 100%;
+  padding-bottom: ${props => props.aspectRatio};
+`
+const thumb = 'thumb'
+const fullimage = 'fullimage'
+export const StyledCardPhoto = styled.img.attrs({
+  thumb, fullimage
+})`
+  max-width: 350px;
+  width: 100%;
+  position: absolute;
+  &.${thumb} {
+    transition: visibility 0ms ease 400ms;
+  }
+  &.${fullimage} {
+    transition: opacity 400ms ease 0ms;
+  }
 `
 export const StyledCardBottom = styled.div`
   width: 100%;
