@@ -1,8 +1,12 @@
 // image imports
 import spacemudPhoto from '../../assets/projects/spacemud.png'
+import spacemudPhotoThumb from '../../assets/projects/spacemudThumb.jpg'
 import appraiserbffPhoto from '../../assets/projects/appraiserbff.png'
+import appraiserbffPhotoThumb from '../../assets/projects/appraiserbffThumb.jpg'
 import betterbusinessPhoto from '../../assets/projects/betterbusiness.png'
+import betterbusinessPhotoThumb from '../../assets/projects/betterbusinessThumb.jpg'
 import airlyticsPhoto from '../../assets/projects/airlytics.png'
+import airlyticsPhotoThumb from '../../assets/projects/airlyticsThumb.jpg'
 
 export const ProjectsData = [
   {
@@ -19,6 +23,8 @@ export const ProjectsData = [
     ],
     photo: '',
     photoAlt: 'Landing page of ',
+    thumb: '',
+    thumbAlt: 'Blurred thumbnail of ',
     gif: '',
     gifAlt: 'Brief demo of ',
   },
@@ -39,6 +45,8 @@ export const ProjectsData = [
     ],
     photo: spacemudPhoto,
     photoAlt: 'Landing page of Space MUD',
+    thumb: spacemudPhotoThumb,
+    thumbAlt: 'Blurred thumbnail of Space MUD',
     gif: spacemudPhoto,
     gifAlt: 'Brief demo of Space MUD',
   },
@@ -61,6 +69,8 @@ export const ProjectsData = [
     ],
     photo: appraiserbffPhoto,
     photoAlt: 'Landing page of Appraiser BFF',
+    thumb: appraiserbffPhotoThumb,
+    thumbAlt: 'Blurred thumbnail of Appraiser BFF',
     gif: appraiserbffPhoto,
     gifAlt: 'Brief demo of Appraiser BFF',
   },
@@ -78,9 +88,11 @@ export const ProjectsData = [
       'Styled-Components',
     ],
     photo: betterbusinessPhoto,
-    photoAlt: 'Landing page of Appraiser BFF',
+    photoAlt: 'Landing page of Better Business',
+    thumb: betterbusinessPhotoThumb,
+    thumbAlt: 'Blurred thumbnail of Better Business',
     gif: betterbusinessPhoto,
-    gifAlt: 'Brief demo of Appraiser BFF',
+    gifAlt: 'Brief demo of Better Business',
   },
   {
     title: 'Airlytics',
@@ -96,8 +108,10 @@ export const ProjectsData = [
       'Styled-Components',
     ],
     photo: airlyticsPhoto,
-    photoAlt: 'Landing page of Appraiser BFF',
+    photoAlt: 'Landing page of Airlytics',
+    thumb: airlyticsPhotoThumb,
+    thumbAlt: 'Blurred thumbnail of Airlytics',
     gif: airlyticsPhoto,
-    gifAlt: 'Brief demo of Appraiser BFF',
+    gifAlt: 'Brief demo of Airlytics',
   },
 ]
