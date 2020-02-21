@@ -1,7 +1,8 @@
 // library imports
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHtml5, faCss3Alt, faJs, faReact, faNode, faPython, faLess, faSass } from '@fortawesome/free-brands-svg-icons'
+import { faHtml5, faCss3Alt, faJs, faReact, faNode, faPython, faLess, faSass, faGitAlt, faGithub, faSlack, faTrello } from '@fortawesome/free-brands-svg-icons'
+import { faDatabase } from '@fortawesome/free-solid-svg-icons'
 // styling
 import { StyledSkillsPage, StyledSkillsContainer, StyledSkillsPair, StyledSkillsText } from '../../styles/StyledComps'
 
@@ -40,6 +41,26 @@ const SkillsPage = () => {
         </StyledSkillsPair>
 
         <StyledSkillsPair>
+          <FontAwesomeIcon icon={faDatabase} size="10x" color='#CFD4E7' title='SQL'/>
+          <StyledSkillsText>SQL</StyledSkillsText>
+        </StyledSkillsPair>
+        
+        {/* <StyledSkillsPair>
+          <FontAwesomeIcon icon={} size="10x" color='#003A56' title='SQLite3'/>
+          <StyledSkillsText>SQLite3</StyledSkillsText>
+        </StyledSkillsPair> */}
+
+        {/* <StyledSkillsPair>
+          <FontAwesomeIcon icon={} size="10x" color='#336791' title='PostgreSQL'/>
+          <StyledSkillsText>PostgreSQL</StyledSkillsText>
+        </StyledSkillsPair> */}
+
+        {/* <StyledSkillsPair>
+          <FontAwesomeIcon icon={} size="10x" color='#118E4D' title='MongoDB'/>
+          <StyledSkillsText>MongoDB</StyledSkillsText>
+        </StyledSkillsPair> */}
+
+        <StyledSkillsPair>
           <FontAwesomeIcon icon={faPython} size="10x" color='#336E9D' title='Python'/>
           <StyledSkillsText>Python</StyledSkillsText>
         </StyledSkillsPair>
@@ -52,6 +73,31 @@ const SkillsPage = () => {
         <StyledSkillsPair>
           <FontAwesomeIcon icon={faSass} size="10x" color='#CD679A' title='Sass'/>
           <StyledSkillsText>Sass</StyledSkillsText>
+        </StyledSkillsPair>
+
+        <StyledSkillsPair>
+          <FontAwesomeIcon icon={faGitAlt} size="10x" color='#E94F32' title='Git'/>
+          <StyledSkillsText>Git</StyledSkillsText>
+        </StyledSkillsPair>
+
+        <StyledSkillsPair>
+          <FontAwesomeIcon icon={faGithub} size="10x" color='#161414' title='Github'/>
+          <StyledSkillsText>Github</StyledSkillsText>
+        </StyledSkillsPair>
+
+        {/* <StyledSkillsPair>
+          <FontAwesomeIcon icon={} size="10x" color='#25A9F3' title='VS Code'/>
+          <StyledSkillsText>VS Code</StyledSkillsText>
+        </StyledSkillsPair> */}
+
+        <StyledSkillsPair>
+          <FontAwesomeIcon icon={faSlack} size="10x" color='#481449' title='Slack'/>
+          <StyledSkillsText>Slack</StyledSkillsText>
+        </StyledSkillsPair>
+
+        <StyledSkillsPair>
+          <FontAwesomeIcon icon={faTrello} size="10x" color='#0076BA' title='Trello'/>
+          <StyledSkillsText>Trello</StyledSkillsText>
         </StyledSkillsPair>
       </StyledSkillsContainer>
     </StyledSkillsPage>
