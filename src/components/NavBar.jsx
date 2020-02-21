@@ -11,7 +11,7 @@ const NavBar = () => {
         <StyledNavLink to='/projects' activeClassName='active-nav'>Projects</StyledNavLink>
         {/* <StyledNavLink to='/about' activeClassName='active-nav'>About</StyledNavLink> */}
         <StyledNavLink to='/skills' activeClassName='active-nav'>Skills</StyledNavLink>
-        <StyledNavA href='https://www.dropbox.com/s/ppysuvlsdhfzhqx/Arvin%20Agas%20Resume.pdf?dl=0' target="_blank">Resume</StyledNavA>
+        <StyledNavA href='https://www.canva.com/design/DADzh2Zobz4/_x6AoOtuGPsIAn_-YA8SPQ/view?utm_content=DADzh2Zobz4&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton' target="_blank">Resume</StyledNavA>
         <StyledNavLink to='/contact' activeClassName='active-nav'>Contact</StyledNavLink>
       </StyledRoutesContainer>
     </StyledNavbar>
