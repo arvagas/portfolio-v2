@@ -129,6 +129,8 @@ export const StyledContactLink = styled(NavLink)`
   }
 `
 export const StyledCopyright = styled.p`
+  color: white;
+  font-size: 1.6rem;
   text-align: center;
 `
 // #######################################################

@@ -27,7 +27,7 @@ const Footer = () => {
         </StyledContactLink>
       </StyledSocialContainer>
 
-      {/* <StyledCopyright>Copyright &copy; Arvin Agas 2019</StyledCopyright> */}
+      <StyledCopyright>Copyright &copy; Arvin Agas 2019-{new Date().getFullYear()}</StyledCopyright>
     </StyledFooter>
   )
 }
