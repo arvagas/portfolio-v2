@@ -60,6 +60,8 @@ export const StyledNavLink = styled(NavLink).attrs({
     font-weight: bolder;
     color: purple;
     -webkit-text-stroke: 0.5px white;
+    pointer-events: none;
+    cursor: default;
   }
 `
 export const StyledNavA = styled.a`
@@ -299,6 +301,47 @@ export const StyledModalLink = styled.a`
 `
 // #######################################################
 
+// @@@@@@@@@@ About Page
+export const StyledAboutPage = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: 1s ${fadeInAnimation};
+`
+export const StyledAboutContainer = styled.div`
+  max-width: 650px;
+  width: 100%;
+  position: relative;
+`
+export const StyledAboutImage = styled.img`
+  border-radius: 50%;
+  width: 200px;
+  border: 5px solid purple;
+  position: absolute;
+  left: -100px;
+  top: -100px;
+`
+export const StyledAboutContent = styled.div`
+  max-width: 650px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+`
+export const StyledAboutHeader = styled.h2`
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 5rem;
+`
+export const StyledAboutPara = styled.p`
+  font-size: 2rem;
+  text-indent: 4rem;
+  margin-top: 2rem;
+`
+// #######################################################
+
 // @@@@@@@@@@ Skills Page
 export const StyledSkillsPage = styled.div`
   display: flex;
@@ -397,6 +440,8 @@ export const StyledContactSubmit = styled.button`
     color: white;
     background-color: plum;
     border: 1px solid white;
+    pointer-events: none;
+    cursor: default;
   }
 `
 // #######################################################

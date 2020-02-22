@@ -27,21 +27,21 @@ const ProjectsCard = ({ project }) => {
       <StyledCardTitle>{project.title}</StyledCardTitle>
 
       <StyledCardBottom>
-        <StyledFontAwesomeIcon icon={faBook} size="2x" title='Learn More' onClick={event => handleModal(event)}/>
+        <StyledFontAwesomeIcon icon={faBook} size='2x' title='Learn More' onClick={event => handleModal(event)}/>
         
         <div>
           {!project.mockup ? '' : (
-            <StyledCardLink href={project.mockup} target="_blank">
-              <StyledFontAwesomeIcon icon={faPalette} size="2x" title='View Mockup'/>
+            <StyledCardLink href={project.mockup} target='_blank' rel='noopener noreferrer'>
+              <StyledFontAwesomeIcon icon={faPalette} size='2x' title='View Mockup'/>
             </StyledCardLink>
           )}
 
-          <StyledCardLink href={project.github} target="_blank">
-            <StyledFontAwesomeIcon icon={faCode} size="2x" title='View Code'/>
+          <StyledCardLink href={project.github} target='_blank' rel='noopener noreferrer'>
+            <StyledFontAwesomeIcon icon={faCode} size='2x' title='View Code'/>
           </StyledCardLink>
 
-          <StyledCardLink href={project.deploy} target="_blank">
-            <StyledFontAwesomeIcon icon={faExternalLinkAlt} size="2x"  title='View Site'/>
+          <StyledCardLink href={project.deploy} target='_blank' rel='noopener noreferrer'>
+            <StyledFontAwesomeIcon icon={faExternalLinkAlt} size='2x'  title='View Site'/>
           </StyledCardLink>
         </div>
       </StyledCardBottom>
