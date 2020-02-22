@@ -9,25 +9,25 @@ import airlyticsPhoto from '../../assets/projects/airlytics.png'
 import airlyticsPhotoThumb from '../../assets/projects/airlyticsThumb.jpg'
 
 export const ProjectsData = [
-  {
-    title: '',
-    tag: "",
-    desc: "",
-    deploy: '',
-    github: '',
-    mockup: '',
-    tech: [
-      '',
-      '',
-      ''
-    ],
-    photo: '',
-    photoAlt: 'Landing page of ',
-    thumb: '',
-    thumbAlt: 'Blurred thumbnail of ',
-    gif: '',
-    gifAlt: 'Brief demo of ',
-  },
+  // {
+  //   title: '',
+  //   tag: "",
+  //   desc: "",
+  //   deploy: '',
+  //   github: '',
+  //   mockup: '',
+  //   tech: [
+  //     '',
+  //     '',
+  //     ''
+  //   ],
+  //   photo: '',
+  //   photoAlt: 'Landing page of ',
+  //   thumb: '',
+  //   thumbAlt: 'Blurred thumbnail of ',
+  //   gif: '',
+  //   gifAlt: 'Brief demo of ',
+  // },
   {
     title: 'Space MUD',
     tag: "A randomly generated multi-user dungeon experience set in an abandoned spacecraft.",

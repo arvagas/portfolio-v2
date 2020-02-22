@@ -452,5 +452,12 @@ export const StyledContactSubmit = styled.button`
 export const CarouselContainer = styled.div`
   max-width: 1000px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+`
+export const CardCarousel = styled.div`
+  display: flex;
+  flex-direction: row;
 `
 // #######################################################
