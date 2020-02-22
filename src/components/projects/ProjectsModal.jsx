@@ -27,17 +27,17 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
       
       <StyledModalBottom>
         {!project.mockup ? '' : (
-          <StyledModalLink href={project.mockup} target="_blank">
-            <FontAwesomeIcon icon={faPalette} size="3x" title='View Mockup'/>
+          <StyledModalLink href={project.mockup} target='_blank' rel='noopener noreferrer'>
+            <FontAwesomeIcon icon={faPalette} size='3x' title='View Mockup'/>
           </StyledModalLink>
         )}
 
-        <StyledModalLink href={project.github} target="_blank">
-          <FontAwesomeIcon icon={faCode} size="3x" title='View Code'/>
+        <StyledModalLink href={project.github} target='_blank' rel='noopener noreferrer'>
+          <FontAwesomeIcon icon={faCode} size='3x' title='View Code'/>
         </StyledModalLink>
 
-        <StyledModalLink href={project.deploy} target="_blank">
-          <FontAwesomeIcon icon={faExternalLinkAlt} size="3x" title='View Site'/>
+        <StyledModalLink href={project.deploy} target='_blank' rel='noopener noreferrer'>
+          <FontAwesomeIcon icon={faExternalLinkAlt} size='3x' title='View Site'/>
         </StyledModalLink>
       </StyledModalBottom>
     </StyledProjectsModal>
