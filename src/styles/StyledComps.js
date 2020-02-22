@@ -447,3 +447,10 @@ export const StyledContactSubmit = styled.button`
   }
 `
 // #######################################################
+
+// @@@@@@@@@@ Carousel
+export const CarouselContainer = styled.div`
+  max-width: 1000px;
+  width: 100%;
+`
+// #######################################################
