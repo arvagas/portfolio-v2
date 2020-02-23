@@ -96,11 +96,13 @@ const Carousel = (props) => {
     <CarouselContainer>
       <CardCarousel>
         <button onClick={()=>handleLeftChange()}>Left Arrow</button>
+
         {renderCards()}
 
         <button onClick={()=>handleRightChange()}>Right Arrow</button>
       </CardCarousel>
-      <div>Dots Here</div>
+
+      {/* <div>Dots Here</div> */}
     </CarouselContainer>
   )
 }
