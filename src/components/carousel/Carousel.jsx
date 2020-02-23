@@ -1,7 +1,9 @@
 // library imports
 import React, { useState, useEffect, Children } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 // styling
-import { CarouselContainer, CardCarousel } from '../../styles/StyledComps'
+import { StyledCarousel, StyledCarouselMain, StyledCarouselCardsContainer, StyledCarouselCard, StyledCarouselFAIWrapper } from '../../styles/StyledComps'
 
 const Carousel = (props) => {
   let { children } = props
@@ -32,11 +34,11 @@ const Carousel = (props) => {
 
   const renderCards = () => {
     return (
-      <div style={{display: 'flex', flexDirection: 'row'}}>
-        <div>{leftCard}</div>
-        <div>{middleCard}</div>
-        <div>{rightCard}</div>
-      </div>
+      <StyledCarouselCardsContainer style={{display: 'flex', flexDirection: 'row'}}>
+        <StyledCarouselCard>{leftCard}</StyledCarouselCard>
+        <StyledCarouselCard>{middleCard}</StyledCarouselCard>
+        <StyledCarouselCard>{rightCard}</StyledCarouselCard>
+      </StyledCarouselCardsContainer>
     )
   }
 
@@ -93,17 +95,21 @@ const Carousel = (props) => {
   }
 
   return (
-    <CarouselContainer>
-      <CardCarousel>
-        <button onClick={()=>handleLeftChange()}>Left Arrow</button>
+    <StyledCarousel>
+      <StyledCarouselMain>
+        <StyledCarouselFAIWrapper onClick={()=>handleLeftChange()}>
+          <FontAwesomeIcon icon={faChevronLeft} size='3x' title='Previous Project'/>
+        </StyledCarouselFAIWrapper>
 
         {renderCards()}
 
-        <button onClick={()=>handleRightChange()}>Right Arrow</button>
-      </CardCarousel>
+        <StyledCarouselFAIWrapper onClick={()=>handleRightChange()}>
+          <FontAwesomeIcon icon={faChevronRight} size='3x' title='Next Project'/>
+        </StyledCarouselFAIWrapper>
+      </StyledCarouselMain>
 
       {/* <div>Dots Here</div> */}
-    </CarouselContainer>
+    </StyledCarousel>
   )
 }
 

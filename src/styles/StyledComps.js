@@ -175,7 +175,6 @@ export const StyledCard = styled.div`
   align-items: center;
   background-color: white;
   padding: 20px;
-  margin: 2rem;
   border-radius: 10px;
   max-width: 400px;
   width: 100%;
@@ -449,15 +448,39 @@ export const StyledContactSubmit = styled.button`
 // #######################################################
 
 // @@@@@@@@@@ Carousel
-export const CarouselContainer = styled.div`
-  max-width: 1000px;
+export const StyledCarousel = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* position: absolute; */
+  align-items: center;
 `
-export const CardCarousel = styled.div`
+export const StyledCarouselMain = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+`
+export const StyledCarouselCardsContainer = styled.div`
+  display: flex;
+  width: 1200px;
+`
+export const StyledCarouselCard = styled.div`
+  max-width: 400px;
+  width: 100%;
+  margin: 2rem;
+`
+export const StyledCarouselFAIWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  color: purple;
+  background-color: white;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+  border-radius: 50%;
+&:hover {
+  color: white;
+  background-color: purple;
+}
 `
 // #######################################################
