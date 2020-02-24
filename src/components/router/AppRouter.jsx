@@ -28,15 +28,15 @@ const AppRouter = () => {
   }
 
   return (
-    <Switch style={{flex: 1}}>
-      <Route exact path='/' component={LandingPage} />
-      <ProjectIndicesContext.Provider value={value}>
+    <ProjectIndicesContext.Provider value={value}>
+      <Switch style={{flex: 1}}>
+        <Route exact path='/' component={LandingPage} />
         <Route path='/projects' component={ProjectsPage} />
-      </ProjectIndicesContext.Provider>
-      <Route path='/about' component={AboutPage} />
-      <Route path='/skills' component={SkillsPage} />
-      <Route path='/contact' component={ContactPage} />
-    </Switch>
+        <Route path='/about' component={AboutPage} />
+        <Route path='/skills' component={SkillsPage} />
+        <Route path='/contact' component={ContactPage} />
+      </Switch>
+    </ProjectIndicesContext.Provider>
   )
 }
 
