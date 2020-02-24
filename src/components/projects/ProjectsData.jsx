@@ -7,6 +7,8 @@ import betterbusinessPhoto from '../../assets/projects/betterbusiness.png'
 import betterbusinessPhotoThumb from '../../assets/projects/betterbusinessThumb.jpg'
 import airlyticsPhoto from '../../assets/projects/airlytics.png'
 import airlyticsPhotoThumb from '../../assets/projects/airlyticsThumb.jpg'
+import immunizationtrackerPhoto from '../../assets/projects/immunizationtracker.png'
+import immunizationtrackerThumb from '../../assets/projects/immunizationtrackerThumb.jpg'
 
 export const ProjectsData = [
   // {
@@ -113,5 +115,25 @@ export const ProjectsData = [
     thumbAlt: 'Blurred thumbnail of Airlytics',
     gif: airlyticsPhoto,
     gifAlt: 'Brief demo of Airlytics',
+  },
+  {
+    title: 'Immunization Tracker',
+    tag: "",
+    desc: "Immunization Tracker is designed to allow parents to keep thier children's immunization records in the cloud. Doctors, when given permission, have the ability to edit those records to always keep the information up to date.",
+    deploy: 'https://immunization-tracker.netlify.com/',
+    github: 'https://github.com/immunization-tracker',
+    mockup: '',
+    tech: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'jQuery'
+    ],
+    photo: immunizationtrackerPhoto,
+    photoAlt: 'Landing page of Immunization Tracker',
+    thumb: immunizationtrackerThumb,
+    thumbAlt: 'Blurred thumbnail of Immunization Tracker',
+    gif: immunizationtrackerPhoto,
+    gifAlt: 'Brief demo of Immunization Tracker',
   },
 ]
