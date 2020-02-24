@@ -29,7 +29,7 @@ const App = () => {
       setBgImg(imgArr[randomIndex])
       // setArrIndex(arrIndex => arrIndex + 1)
     }
-  }, [])
+  }, [bgImg, imgArr])
 
   // change background every 45 seconds
   // useEffect(() => {
