@@ -81,6 +81,9 @@ export const StyledNavHome = styled(NavLink)`
   font-size: 3rem;
   color: white;
   font-weight: bolder;
+  @media ${device.tablet} {
+    font-size: 2.4rem;
+  }
 `
 export const StyledRoutesContainer = styled.div`
 /* padding: 1rem;
@@ -105,6 +108,9 @@ export const StyledNavLink = styled(NavLink).attrs({
     pointer-events: none;
     cursor: default;
   }
+  @media ${device.tablet} {
+    font-size: 2.4rem;
+  }
 `
 export const StyledNavA = styled.a`
   padding: 1rem;
@@ -114,6 +120,9 @@ export const StyledNavA = styled.a`
   color: white;
   &:hover {
     color: purple;
+  }
+  @media ${device.tablet} {
+    font-size: 2.4rem;
   }
 `
 // #######################################################
@@ -226,6 +235,9 @@ export const StyledCardTitle = styled.h2`
   margin: 1rem 0 2rem;
   @media ${device.laptop} {
     font-size: 2rem;
+  }
+  @media ${device.tablet} {
+    font-size: 1.6rem;
   }
 `
 export const StyledCardPhotoContainer = styled.div`
@@ -363,6 +375,9 @@ export const StyledAboutContainer = styled.div`
   max-width: 650px;
   width: 100%;
   position: relative;
+  @media ${device.tablet} {
+    max-width: 500px;
+  }
 `
 export const StyledAboutImage = styled.img`
   border-radius: 50%;
@@ -408,6 +423,9 @@ export const StyledSkillsContainer = styled.div`
   @media ${device.laptop} {
     max-width: 800px;
   }
+  @media ${device.tablet} {
+    max-width: 700px;
+  }
 `
 export const StyledSkillsPair = styled.div`
   display: flex;
@@ -419,6 +437,9 @@ export const StyledSkillsPair = styled.div`
 export const StyledSkillsText = styled.p`
   color: white;
   font-size: 2.8rem;
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
 `
 // #######################################################
 
@@ -549,6 +570,9 @@ export const StyledCarouselCard = styled.div`
   }
   @media ${device.laptop} {
     max-width: 250px;
+  }
+  @media ${device.tablet} {
+    max-width: 200px;
   }
 `
 export const StyledCarouselFAIWrapper = styled.div`
