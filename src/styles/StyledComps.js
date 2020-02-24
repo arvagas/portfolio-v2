@@ -22,8 +22,7 @@ const device = {
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(max-width: ${size.laptop})`,
   laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
-  desktopL: `(max-width: ${size.desktop})`
+  desktop: `(max-width: ${size.desktop})`
 };
 
 // animations
@@ -225,6 +224,9 @@ export const StyledCard = styled.div`
 export const StyledCardTitle = styled.h2`
   font-size: 2.4rem;
   margin: 1rem 0 2rem;
+  @media ${device.laptop} {
+    font-size: 2rem;
+  }
 `
 export const StyledCardPhotoContainer = styled.div`
   background-color: lightgray;
@@ -391,6 +393,7 @@ export const StyledAboutPara = styled.p`
 
 // @@@@@@@@@@ Skills Page
 export const StyledSkillsPage = styled.div`
+  flex: 1;
   display: flex;
   justify-content: center;
   animation: 1s ${fadeInAnimation};
@@ -400,12 +403,11 @@ export const StyledSkillsContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* background-color: black;
-  border: 1px solid white; */
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 1000px;
+  width: 100%;
+  @media ${device.laptop} {
+    max-width: 800px;
+  }
 `
 export const StyledSkillsPair = styled.div`
   display: flex;
@@ -500,6 +502,9 @@ export const StyledCarousel = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${device.laptop} {
+    max-width: 950px;
+  }
 `
 export const StyledCarouselMain = styled.div`
   display: flex;
@@ -514,13 +519,16 @@ export const StyledCarouselCardsContainer = styled.div`
   max-width: 1450px;
   width: 100%;
   position: relative;
+  @media ${device.laptop} {
+    max-width: 800px;
+  }
 `
 const carouselAnimation = css`
   animation: 1s ${props => {
     if (props.animation === 'left-in') return fadeInDownAnimation
-    else if (props.animation === 'left-out') return  fadeOutUpAnimation
-    else if (props.animation === 'right-out') return fadeOutDownAnimation
-    else if (props.animation === 'right-in') return fadeInUpAnimation
+    else if (props.animation === 'left-out') return  fadeOutAnimation
+    else if (props.animation === 'right-out') return fadeOutAnimation
+    else if (props.animation === 'right-in') return fadeInDownAnimation
     else if (props.animation === 'move-right') return moveRightAnimation
     else if (props.animation === 'move-left') return moveLeftAnimation
   }} ${props => (props.animation === 'left-out' || props.animation === 'right-out' ? 'forwards' : '')}
@@ -528,8 +536,20 @@ const carouselAnimation = css`
 export const StyledCarouselCard = styled.div`
   max-width: 400px;
   width: 100%;
-  margin: 2rem;
+  margin: 1rem;
   ${props => (props.animation ? carouselAnimation : '')};
+  @media (max-width: 1360px) {
+    max-width: 350px;
+  }
+  @media (max-width: 1200px) {
+    max-width: 300px;
+  }
+  @media (max-width: 1080px) {
+    max-width: 275px;
+  }
+  @media ${device.laptop} {
+    max-width: 250px;
+  }
 `
 export const StyledCarouselFAIWrapper = styled.div`
   display: flex;
