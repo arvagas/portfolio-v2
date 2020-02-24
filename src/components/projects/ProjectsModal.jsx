@@ -3,7 +3,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faExternalLinkAlt, faPalette } from '@fortawesome/free-solid-svg-icons'
 // styling
-import { StyledProjectsModal, StyledModalX, StyledModalTitle, StyledModalPhoto, StyledModalMiddle, StyledModalContent, StyledModalContentSpan, StyledModalBottom, StyledModalLink } from '../../styles/StyledComps'
+import { StyledProjectsModal, StyledModalX, StyledModalTitle, StyledModalPhoto, StyledModalMiddle, StyledModalContent, StyledModalUList, StyledModalResp, StyledModalContentTech, StyledModalBottom, StyledModalLink } from '../../styles/StyledComps'
 
 const ProjectsModal = ({ project, showModal, handleModal }) => {
 
@@ -15,12 +15,20 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
       <StyledModalPhoto src={project.gif} alt={project.gifAlt}/>
 
       <StyledModalMiddle>
-        <StyledModalContent>{project.desc}</StyledModalContent>
-        
         <div>
-          <StyledModalContentSpan>Built with: </StyledModalContentSpan>
+          <StyledModalContent>{project.desc}</StyledModalContent>
+
+          <StyledModalUList>
+            {project.resp.map(bullet => (
+              <StyledModalResp>{bullet}</StyledModalResp>
+            ))}
+          </StyledModalUList>  
+        </div>
+
+        <div>
+          <StyledModalContentTech>Built with: </StyledModalContentTech>
           {project.tech.map((item, index) => (
-            <StyledModalContentSpan key={Date.now()+index}>{project.tech.length > index+1 ? `${item}, ` : item}</StyledModalContentSpan>
+            <StyledModalContentTech key={Date.now()+index}>{project.tech.length > index+1 ? `${item}, ` : item}</StyledModalContentTech>
           ))}
         </div>
       </StyledModalMiddle>

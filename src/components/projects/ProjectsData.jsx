@@ -15,6 +15,11 @@ export const ProjectsData = [
   //   title: '',
   //   tag: "",
   //   desc: "",
+  //   resp: [
+  //     '',
+  //     '',
+  //     ''
+  //   ],
   //   deploy: '',
   //   github: '',
   //   mockup: '',
@@ -34,6 +39,10 @@ export const ProjectsData = [
     title: 'Space MUD',
     tag: "A randomly generated multi-user dungeon experience set in an abandoned spacecraft.",
     desc: "A one week project built by myself and four other developers. The Django framework was utilized to generate and serve a map, as well as provide additional endpoints for player interaction within the game.",
+    resp: [
+      'Set up the REST API in Django, allowing the React front end to communicate with the back end to deliver information seamlessly.',
+      'Integrated Pusher into the back and front end to allow users to effortlessly communicate with one another in real time.',
+    ],
     deploy: 'https://vibrant-noyce-dc1ddd.netlify.com/',
     github: 'https://github.com/CSBeastMode',
     mockup: '',
@@ -56,12 +65,14 @@ export const ProjectsData = [
     title: 'Appraiser BFF',
     tag: "Web app designed to assist in the valuation of a homeowner's property.",
     desc: "The goal of this project was to provide an estimated valuation of a homeowner's property determined by select features, with calculations based on existing aggregated data. As the backend developer, I created a RESTful API that handled user registration and login, property listings, as well as retrieved the calculated price that is returned from the data science model.",
+    resp: [
+      'Built the back end to handle user registration, profiles, and property listings.',
+      'Handled the retrieval and storage of data calculated via the data science algorithm.',
+    ],
     deploy: 'http://www.appraiserbff.xyz/',
     github: 'https://github.com/bw-appraisers-bff',
     mockup: '',
     tech: [
-      'React',
-      'React-Redux',
       'Node',
       'Express',
       'Bcrypt.js',
@@ -80,6 +91,11 @@ export const ProjectsData = [
     title: 'Better Business',
     tag: "Increase the review rating of a business by focusing on the negative.",
     desc: "Better Business aims to increase the review ratings of an establishment by focusing on key words in a Yelp or Google Review. A thorough parse of each review will yield common words or phrases that appear on other write-ups, thus allowing an owner to concentrate on what needs to be fixed and ignore fixing what already works.",
+    resp: [
+      'Created the landing page and its animations to intrigue potential users.',
+      'Set up the web page routing to different pages.',
+      'Had a hand in setting up Formik and handling the inputted data.',
+    ],
     deploy: 'https://better-business.netlify.com/',
     github: 'https://github.com/Business-Recommendation',
     mockup: '',
@@ -100,6 +116,10 @@ export const ProjectsData = [
     title: 'Airlytics',
     tag: "Get optimal rates for your AirBnB listings.",
     desc: "This project aimed to calculate the best possible rate a host should list for a property for AirBnB usage. Based on properties that a house or apartment may or may not have, an algorithm devised on data from hundreds of AirBnB listings will output a recommended price range to use for maximum profit.",
+    resp: [
+      'Built the cards used to view available listings from scratch.',
+      'Customized the modals that each property listing would bring up.',
+    ],
     deploy: 'https://airlytics.netlify.com/',
     github: 'https://github.com/airbnb-price-opt',
     mockup: '',
@@ -119,7 +139,12 @@ export const ProjectsData = [
   {
     title: 'Immunization Tracker',
     tag: "",
-    desc: "Immunization Tracker is designed to allow parents to keep thier children's immunization records in the cloud. Doctors, when given permission, have the ability to edit those records to always keep the information up to date.",
+    desc: "Immunization Tracker is designed to allow parents to keep their children's immunization records on the web. Physicians, when given permission, have the ability to edit those records after each doctor's appointment to always keep the information up to date.",
+    resp: [
+      'Designed the template of how the marketing page would look like.',
+      'Took part in a collaborative effort to create the landing page.',
+      'Built and populated the help page with possible frequently asked questions.',
+    ],
     deploy: 'https://immunization-tracker.netlify.com/',
     github: 'https://github.com/immunization-tracker',
     mockup: 'https://designer.gravit.io/?token=9MdZAdiV5YcYD2dddEWD_JPy0gE9Rk-9',

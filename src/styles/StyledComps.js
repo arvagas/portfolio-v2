@@ -2,7 +2,7 @@
 import styled, { keyframes, css } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fadeIn, fadeInDown, fadeInUp, fadeOut, fadeOutUp, fadeOutDown, rollIn, pulse } from 'react-animations'
+import { fadeIn, fadeInDown, fadeInUp, fadeOut, fadeOutUp, fadeOutDown, fadeOutLeft, fadeOutRight, rollIn, pulse } from 'react-animations'
 
 // media queries
 const size = {
@@ -32,6 +32,8 @@ const fadeInUpAnimation = keyframes`${fadeInUp}`
 const fadeOutAnimation = keyframes`${fadeOut}`
 const fadeOutUpAnimation = keyframes`${fadeOutUp}`
 const fadeOutDownAnimation = keyframes`${fadeOutDown}`
+const fadeOutLeftAnimation = keyframes`${fadeOutLeft}`
+const fadeOutRightAnimation = keyframes`${fadeOutRight}`
 const rollInAnimation = keyframes`${rollIn}`
 const pulseAnimation = keyframes`${pulse}`
 const moveRightAnimation = keyframes`
@@ -396,8 +398,18 @@ export const StyledModalMiddle = styled.div`
 `
 export const StyledModalContent = styled.p`
   font-size: 2rem;
+  margin-bottom: 1rem;
 `
-export const StyledModalContentSpan = styled.span`
+export const StyledModalUList = styled.ul`
+  list-style-type: circle;
+  list-style-position: outside;
+  padding-left: 2.4rem;
+`
+export const StyledModalResp = styled.li`
+  font-size: 2rem;
+  padding: 0;
+`
+export const StyledModalContentTech = styled.span`
   font-size: 2rem;
 `
 export const StyledModalBottom = styled.div`
@@ -703,8 +715,8 @@ export const StyledCarouselCardsContainer = styled.div`
 const carouselAnimation = css`
   animation: 1s ${props => {
     if (props.animation === 'left-in') return fadeInDownAnimation
-    else if (props.animation === 'left-out') return  fadeOutAnimation
-    else if (props.animation === 'right-out') return fadeOutAnimation
+    else if (props.animation === 'left-out') return  fadeOutLeftAnimation
+    else if (props.animation === 'right-out') return fadeOutRightAnimation
     else if (props.animation === 'right-in') return fadeInDownAnimation
     else if (props.animation === 'move-right') return moveRightAnimation
     else if (props.animation === 'move-left') return moveLeftAnimation
@@ -741,6 +753,7 @@ export const StyledCarouselFAIWrapper = styled.div`
   height: 50px;
   padding: 1rem;
   border-radius: 50%;
+  z-index: 2;
   &:hover {
     color: white;
     background-color: purple;
