@@ -152,6 +152,9 @@ export const StyledSocialContainer = styled.div`
   @media ${device.mobileL} {
     max-width: 375px;
   }
+  @media ${device.mobileM} {
+    max-width: 325px;
+  }
 `
 export const StyledProfileImage = styled.img`
   border-radius: 50%;
@@ -160,6 +163,7 @@ export const StyledProfileImage = styled.img`
   animation: 2s ${rollInAnimation} forwards;
   @media ${device.mobileL} {
     width: 60px;
+    border: 3px solid purple;
   }
 `
 export const StyledSocialLink = styled.a`
@@ -214,6 +218,9 @@ export const StyledName = styled.h1`
   @media ${device.mobileL} {
     font-size: 4rem;
   }
+  @media ${device.mobileM} {
+    font-size: 3.6rem;
+  }
 `
 export const StyledIAmA = styled.h2`
   font-size: 4rem;
@@ -222,6 +229,9 @@ export const StyledIAmA = styled.h2`
   margin-bottom: 1rem;
   @media ${device.mobileL} {
     font-size: 3rem;
+  }
+  @media ${device.mobileM} {
+    font-size: 2.4rem;
   }
 `
 // #######################################################
@@ -399,6 +409,9 @@ export const StyledAboutContainer = styled.div`
   @media ${device.mobileL} {
     max-width: 375px;
   }
+  @media ${device.mobileM} {
+    max-width: 350px;
+  }
 `
 export const StyledAboutImage = styled.img`
   border-radius: 50%;
@@ -408,9 +421,7 @@ export const StyledAboutImage = styled.img`
   left: -100px;
   top: -100px;
   @media ${device.mobileL} {
-    width: 120px;
-    left: 0px;
-    top: -60px;
+    display: none;
   }
 `
 export const StyledAboutContent = styled.div`
@@ -462,6 +473,9 @@ export const StyledSkillsContainer = styled.div`
   @media ${device.mobileL} {
     max-width: 375px;
   }
+  @media ${device.mobileM} {
+    max-width: 350px;
+  }
 `
 export const StyledSkillsPair = styled.div`
   display: flex;
@@ -509,6 +523,9 @@ export const StyledContactForm = styled.form`
   @media ${device.mobileL} {
     max-width: 375px;
     max-height: 450px;
+  }
+  @media ${device.mobileM} {
+    max-width: 350px;
   }
 `
 export const StyledContactHeader = styled.h2`
