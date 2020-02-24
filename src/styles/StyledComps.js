@@ -297,13 +297,16 @@ export const StyledProjectsModal = styled.div`
 `
 export const StyledModalX = styled.div`
   position: absolute;
-  right: 20px;
+  right: 10px;
+  top: 10px;
   font-size: 2rem;
+  font-weight: bolder;
   color: gray;
-  /* border: 1px solid grey; */
   padding: 10px;
-  /* border-radius: 10px; */
   cursor: pointer;
+  &:hover {
+    color: red;
+  }
 `
 export const StyledModalTitle = styled.h1`
   font-size: 3.2rem;
