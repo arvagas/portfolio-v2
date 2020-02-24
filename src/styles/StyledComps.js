@@ -153,7 +153,10 @@ export const StyledSocialContainer = styled.div`
     max-width: 375px;
   }
   @media ${device.mobileM} {
-    max-width: 325px;
+    max-width: 300px;
+  }
+  @media ${device.mobileS} {
+    max-width: 280px;
   }
 `
 export const StyledProfileImage = styled.img`
@@ -164,6 +167,10 @@ export const StyledProfileImage = styled.img`
   @media ${device.mobileL} {
     width: 60px;
     border: 3px solid purple;
+  }
+  @media ${device.mobileS} {
+    width: 50px;
+    border: 2px solid purple;
   }
 `
 export const StyledSocialLink = styled.a`
@@ -178,6 +185,12 @@ export const StyledSocialLink = styled.a`
     color: white;
     background-color: purple;
   }
+  @media ${device.mobileL} {
+    padding: 7px;
+  }
+  @media ${device.mobileS} {
+    padding: 6px;
+  }
 `
 export const StyledContactLink = styled(NavLink)`
   border-radius: 50%;
@@ -190,6 +203,12 @@ export const StyledContactLink = styled(NavLink)`
   &:hover {
     color: white;
     background-color: purple;
+  }
+  @media ${device.mobileL} {
+    padding: 7px;
+  }
+  @media ${device.mobileS} {
+    padding: 6px;
   }
 `
 export const StyledCopyright = styled.p`
@@ -221,6 +240,9 @@ export const StyledName = styled.h1`
   @media ${device.mobileM} {
     font-size: 3.6rem;
   }
+  @media ${device.mobileS} {
+    font-size: 3.2rem;
+  }
 `
 export const StyledIAmA = styled.h2`
   font-size: 4rem;
@@ -232,6 +254,9 @@ export const StyledIAmA = styled.h2`
   }
   @media ${device.mobileM} {
     font-size: 2.4rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 2rem;
   }
 `
 // #######################################################
@@ -412,6 +437,9 @@ export const StyledAboutContainer = styled.div`
   @media ${device.mobileM} {
     max-width: 350px;
   }
+  @media ${device.mobileM} {
+    max-width: 300px;
+  }
 `
 export const StyledAboutImage = styled.img`
   border-radius: 50%;
@@ -437,7 +465,7 @@ export const StyledAboutHeader = styled.h2`
   margin-bottom: 5rem;
   @media ${device.mobileL} {
     font-size: 2.4rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.6rem;
   }
 `
 export const StyledAboutPara = styled.p`
@@ -446,6 +474,15 @@ export const StyledAboutPara = styled.p`
   margin-top: 2rem;
   @media ${device.mobileL} {
     font-size: 1.6rem;
+    text-indent: 3.2rem;
+  }
+  @media ${device.mobileM} {
+    font-size: 1.5rem;
+    text-indent: 3rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
+    text-indent: 2.8rem;
   }
 `
 // #######################################################
@@ -476,6 +513,9 @@ export const StyledSkillsContainer = styled.div`
   @media ${device.mobileM} {
     max-width: 350px;
   }
+  @media ${device.mobileS} {
+    max-width: 300px;
+  }
 `
 export const StyledSkillsPair = styled.div`
   display: flex;
@@ -486,6 +526,9 @@ export const StyledSkillsPair = styled.div`
   @media ${device.mobileL} {
     margin: 1.6rem;
   }
+  @media ${device.mobileS} {
+    margin: 1.2rem;
+  }
 `
 export const StyledSkillsText = styled.p`
   color: white;
@@ -495,6 +538,9 @@ export const StyledSkillsText = styled.p`
   }
   @media ${device.mobileL} {
     font-size: 1.6rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
   }
 `
 // #######################################################
@@ -527,6 +573,10 @@ export const StyledContactForm = styled.form`
   @media ${device.mobileM} {
     max-width: 350px;
   }
+  @media ${device.mobileS} {
+    max-width: 300px;
+    max-height: 400px;
+  }
 `
 export const StyledContactHeader = styled.h2`
   font-size: 3.2rem;
@@ -540,6 +590,9 @@ export const StyledContactNotice = styled.p`
   @media ${device.mobileL} {
     font-size: 1.4rem;
   }
+  @media ${device.mobileS} {
+    font-size: 1.2rem;
+  }
 `
 export const StyledContactLabel = styled.label`
   display: flex;
@@ -549,6 +602,9 @@ export const StyledContactLabel = styled.label`
   @media ${device.mobileL} {
     font-size: 1.6rem;
   }
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
+  }
 `
 export const StyledContactInput = styled.input`
   padding: 5px 10px;
@@ -557,6 +613,9 @@ export const StyledContactInput = styled.input`
   @media ${device.mobileL} {
     font-size: 1.2rem;
   }
+  @media ${device.mobileS} {
+    font-size: 1rem;
+  }
 `
 export const StyledContactTextArea = styled.textarea`
   padding: 5px 10px;
@@ -564,6 +623,9 @@ export const StyledContactTextArea = styled.textarea`
   margin: 5px 0 0;
   @media ${device.mobileL} {
     font-size: 1.2rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1rem;
   }
 `
 export const StyledContactError = styled.p`
@@ -596,6 +658,10 @@ export const StyledContactSubmit = styled.button`
   @media ${device.mobileL} {
     font-size: 1.6rem;
     padding: 6px;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
+    padding: 4px;
   }
 `
 // #######################################################

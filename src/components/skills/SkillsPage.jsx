@@ -12,7 +12,8 @@ const SkillsPage = () => {
   let { windowWidth } = useWindowDimensions()
 
   const determineSize = () => {
-    if (windowWidth <= 425) return '5x'
+    if (windowWidth <= 320) return '3x'
+    else if (windowWidth <= 425) return '5x'
     else if (windowWidth <= 768) return '8x'
     else return '10x'
   }
