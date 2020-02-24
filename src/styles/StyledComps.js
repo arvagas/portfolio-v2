@@ -4,6 +4,27 @@ import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fadeIn, fadeInDown, fadeInUp, fadeOut, fadeOutUp, fadeOutDown, rollIn, pulse } from 'react-animations'
 
+// media queries
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
+const device = {
+  mobileS: `(max-width: ${size.mobileS})`,
+  mobileM: `(max-width: ${size.mobileM})`,
+  mobileL: `(max-width: ${size.mobileL})`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptop: `(max-width: ${size.laptop})`,
+  laptopL: `(max-width: ${size.laptopL})`,
+  desktop: `(max-width: ${size.desktop})`
+};
+
 // animations
 const fadeInAnimation = keyframes`${fadeIn}`
 const fadeInDownAnimation = keyframes`${fadeInDown}`
@@ -60,6 +81,9 @@ export const StyledNavHome = styled(NavLink)`
   font-size: 3rem;
   color: white;
   font-weight: bolder;
+  @media ${device.tablet} {
+    font-size: 2.4rem;
+  }
 `
 export const StyledRoutesContainer = styled.div`
 /* padding: 1rem;
@@ -84,6 +108,9 @@ export const StyledNavLink = styled(NavLink).attrs({
     pointer-events: none;
     cursor: default;
   }
+  @media ${device.tablet} {
+    font-size: 2.4rem;
+  }
 `
 export const StyledNavA = styled.a`
   padding: 1rem;
@@ -93,6 +120,9 @@ export const StyledNavA = styled.a`
   color: white;
   &:hover {
     color: purple;
+  }
+  @media ${device.tablet} {
+    font-size: 2.4rem;
   }
 `
 // #######################################################
@@ -104,10 +134,13 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   padding: 2rem 0;
   min-height: 50px;
-  position:absolute;
+  /* position:absolute;
   left:0;
   bottom:0;
-  right:0;
+  right:0; */
+  @media ${device.mobileL} {
+    padding: 2rem 0 1rem;
+  }
 `
 export const StyledSocialContainer = styled.div`
   align-self: center;
@@ -116,12 +149,29 @@ export const StyledSocialContainer = styled.div`
   align-items: center;
   max-width: 500px;
   width: 100%;
+  @media ${device.mobileL} {
+    max-width: 375px;
+  }
+  @media ${device.mobileM} {
+    max-width: 300px;
+  }
+  @media ${device.mobileS} {
+    max-width: 280px;
+  }
 `
 export const StyledProfileImage = styled.img`
   border-radius: 50%;
   width: 75px;
   border: 5px solid purple;
   animation: 2s ${rollInAnimation} forwards;
+  @media ${device.mobileL} {
+    width: 60px;
+    border: 3px solid purple;
+  }
+  @media ${device.mobileS} {
+    width: 50px;
+    border: 2px solid purple;
+  }
 `
 export const StyledSocialLink = styled.a`
   border-radius: 50%;
@@ -134,6 +184,12 @@ export const StyledSocialLink = styled.a`
   &:hover {
     color: white;
     background-color: purple;
+  }
+  @media ${device.mobileL} {
+    padding: 7px;
+  }
+  @media ${device.mobileS} {
+    padding: 6px;
   }
 `
 export const StyledContactLink = styled(NavLink)`
@@ -148,11 +204,20 @@ export const StyledContactLink = styled(NavLink)`
     color: white;
     background-color: purple;
   }
+  @media ${device.mobileL} {
+    padding: 7px;
+  }
+  @media ${device.mobileS} {
+    padding: 6px;
+  }
 `
 export const StyledCopyright = styled.p`
   color: white;
   font-size: 1.6rem;
   text-align: center;
+  @media ${device.mobileL} {
+    font-size: 1rem;
+  }
 `
 // #######################################################
 
@@ -169,12 +234,30 @@ export const StyledName = styled.h1`
   font-weight: bolder;
   color: white;
   margin-bottom: 1.6rem;
+  @media ${device.mobileL} {
+    font-size: 4rem;
+  }
+  @media ${device.mobileM} {
+    font-size: 3.6rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 3.2rem;
+  }
 `
 export const StyledIAmA = styled.h2`
   font-size: 4rem;
   text-align: center;
   color: white;
   margin-bottom: 1rem;
+  @media ${device.mobileL} {
+    font-size: 3rem;
+  }
+  @media ${device.mobileM} {
+    font-size: 2.4rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 2rem;
+  }
 `
 // #######################################################
 
@@ -203,6 +286,12 @@ export const StyledCard = styled.div`
 export const StyledCardTitle = styled.h2`
   font-size: 2.4rem;
   margin: 1rem 0 2rem;
+  @media ${device.laptop} {
+    font-size: 2rem;
+  }
+  @media ${device.tablet} {
+    font-size: 1.6rem;
+  }
 `
 export const StyledCardPhotoContainer = styled.div`
   background-color: lightgray;
@@ -275,13 +364,16 @@ export const StyledProjectsModal = styled.div`
 `
 export const StyledModalX = styled.div`
   position: absolute;
-  right: 20px;
+  right: 10px;
+  top: 10px;
   font-size: 2rem;
+  font-weight: bolder;
   color: gray;
-  /* border: 1px solid grey; */
   padding: 10px;
-  /* border-radius: 10px; */
   cursor: pointer;
+  &:hover {
+    color: red;
+  }
 `
 export const StyledModalTitle = styled.h1`
   font-size: 3.2rem;
@@ -336,6 +428,18 @@ export const StyledAboutContainer = styled.div`
   max-width: 650px;
   width: 100%;
   position: relative;
+  @media ${device.tablet} {
+    max-width: 500px;
+  }
+  @media ${device.mobileL} {
+    max-width: 375px;
+  }
+  @media ${device.mobileM} {
+    max-width: 350px;
+  }
+  @media ${device.mobileM} {
+    max-width: 300px;
+  }
 `
 export const StyledAboutImage = styled.img`
   border-radius: 50%;
@@ -344,6 +448,9 @@ export const StyledAboutImage = styled.img`
   position: absolute;
   left: -100px;
   top: -100px;
+  @media ${device.mobileL} {
+    display: none;
+  }
 `
 export const StyledAboutContent = styled.div`
   max-width: 650px;
@@ -356,16 +463,33 @@ export const StyledAboutHeader = styled.h2`
   font-size: 3.2rem;
   text-align: center;
   margin-bottom: 5rem;
+  @media ${device.mobileL} {
+    font-size: 2.4rem;
+    margin-bottom: 1.6rem;
+  }
 `
 export const StyledAboutPara = styled.p`
   font-size: 2rem;
   text-indent: 4rem;
   margin-top: 2rem;
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+    text-indent: 3.2rem;
+  }
+  @media ${device.mobileM} {
+    font-size: 1.5rem;
+    text-indent: 3rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
+    text-indent: 2.8rem;
+  }
 `
 // #######################################################
 
 // @@@@@@@@@@ Skills Page
 export const StyledSkillsPage = styled.div`
+  flex: 1;
   display: flex;
   justify-content: center;
   animation: 1s ${fadeInAnimation};
@@ -375,12 +499,23 @@ export const StyledSkillsContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* background-color: black;
-  border: 1px solid white; */
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 1000px;
+  width: 100%;
+  @media ${device.laptop} {
+    max-width: 800px;
+  }
+  @media ${device.tablet} {
+    max-width: 700px;
+  }
+  @media ${device.mobileL} {
+    max-width: 375px;
+  }
+  @media ${device.mobileM} {
+    max-width: 350px;
+  }
+  @media ${device.mobileS} {
+    max-width: 300px;
+  }
 `
 export const StyledSkillsPair = styled.div`
   display: flex;
@@ -388,16 +523,34 @@ export const StyledSkillsPair = styled.div`
   justify-content: center;
   align-items: center;
   margin: 3rem;
+  @media ${device.mobileL} {
+    margin: 1.6rem;
+  }
+  @media ${device.mobileS} {
+    margin: 1.2rem;
+  }
 `
 export const StyledSkillsText = styled.p`
   color: white;
   font-size: 2.8rem;
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
+  }
 `
 // #######################################################
 
 // @@@@@@@@@@ Contact Page
 export const StyledContactPage = styled.div`
+  flex: 1;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   animation: 1s ${fadeInAnimation};
 `
@@ -408,43 +561,80 @@ export const StyledContactForm = styled.form`
   align-items: center;
   background-color: white;
   border-radius: 20px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   max-width: 450px;
   width: 100%;
   max-height: 550px;
   height: 100%;
   padding: 2rem;
+  @media ${device.mobileL} {
+    max-width: 375px;
+    max-height: 450px;
+  }
+  @media ${device.mobileM} {
+    max-width: 350px;
+  }
+  @media ${device.mobileS} {
+    max-width: 300px;
+    max-height: 400px;
+  }
 `
 export const StyledContactHeader = styled.h2`
   font-size: 3.2rem;
+  @media ${device.mobileL} {
+    font-size: 2.4rem;
+  }
 `
 export const StyledContactNotice = styled.p`
   font-size: 1.6rem;
   text-align: center;
+  @media ${device.mobileL} {
+    font-size: 1.4rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.2rem;
+  }
 `
 export const StyledContactLabel = styled.label`
   display: flex;
   flex-direction: column;
   font-size: 2rem;
   width: 100%;
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
+  }
 `
 export const StyledContactInput = styled.input`
   padding: 5px 10px;
   font-size: 1.6rem;
   margin: 5px 0 0;
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1rem;
+  }
 `
 export const StyledContactTextArea = styled.textarea`
   padding: 5px 10px;
   font-size: 1.6rem;
   margin: 5px 0 0;
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1rem;
+  }
 `
 export const StyledContactError = styled.p`
   font-size: 1.4rem;
   color: red;
   text-align: center;
+  @media ${device.mobileL} {
+    font-size: 1rem;
+  }
 `
 export const StyledContactSubmit = styled.button`
   cursor: pointer;
@@ -465,6 +655,14 @@ export const StyledContactSubmit = styled.button`
     pointer-events: none;
     cursor: default;
   }
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+    padding: 6px;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
+    padding: 4px;
+  }
 `
 // #######################################################
 
@@ -475,6 +673,9 @@ export const StyledCarousel = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${device.laptop} {
+    max-width: 950px;
+  }
 `
 export const StyledCarouselMain = styled.div`
   display: flex;
@@ -489,13 +690,16 @@ export const StyledCarouselCardsContainer = styled.div`
   max-width: 1450px;
   width: 100%;
   position: relative;
+  @media ${device.laptop} {
+    max-width: 800px;
+  }
 `
 const carouselAnimation = css`
   animation: 1s ${props => {
     if (props.animation === 'left-in') return fadeInDownAnimation
-    else if (props.animation === 'left-out') return  fadeOutUpAnimation
-    else if (props.animation === 'right-out') return fadeOutDownAnimation
-    else if (props.animation === 'right-in') return fadeInUpAnimation
+    else if (props.animation === 'left-out') return  fadeOutAnimation
+    else if (props.animation === 'right-out') return fadeOutAnimation
+    else if (props.animation === 'right-in') return fadeInDownAnimation
     else if (props.animation === 'move-right') return moveRightAnimation
     else if (props.animation === 'move-left') return moveLeftAnimation
   }} ${props => (props.animation === 'left-out' || props.animation === 'right-out' ? 'forwards' : '')}
@@ -503,8 +707,23 @@ const carouselAnimation = css`
 export const StyledCarouselCard = styled.div`
   max-width: 400px;
   width: 100%;
-  margin: 2rem;
+  margin: 1rem;
   ${props => (props.animation ? carouselAnimation : '')};
+  @media (max-width: 1360px) {
+    max-width: 350px;
+  }
+  @media (max-width: 1200px) {
+    max-width: 300px;
+  }
+  @media (max-width: 1080px) {
+    max-width: 275px;
+  }
+  @media ${device.laptop} {
+    max-width: 250px;
+  }
+  @media ${device.tablet} {
+    max-width: 200px;
+  }
 `
 export const StyledCarouselFAIWrapper = styled.div`
   display: flex;

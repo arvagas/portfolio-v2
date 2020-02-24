@@ -122,7 +122,7 @@ export const ProjectsData = [
     desc: "Immunization Tracker is designed to allow parents to keep thier children's immunization records in the cloud. Doctors, when given permission, have the ability to edit those records to always keep the information up to date.",
     deploy: 'https://immunization-tracker.netlify.com/',
     github: 'https://github.com/immunization-tracker',
-    mockup: '',
+    mockup: 'https://designer.gravit.io/?token=9MdZAdiV5YcYD2dddEWD_JPy0gE9Rk-9',
     tech: [
       'HTML',
       'CSS',
