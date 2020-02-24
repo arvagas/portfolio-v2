@@ -2,12 +2,13 @@
 import styled, { keyframes, css } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fadeIn, fadeInDown, fadeInUp, fadeOutUp, fadeOutDown, rollIn, pulse } from 'react-animations'
+import { fadeIn, fadeInDown, fadeInUp, fadeOut, fadeOutUp, fadeOutDown, rollIn, pulse } from 'react-animations'
 
 // animations
 const fadeInAnimation = keyframes`${fadeIn}`
 const fadeInDownAnimation = keyframes`${fadeInDown}`
 const fadeInUpAnimation = keyframes`${fadeInUp}`
+const fadeOutAnimation = keyframes`${fadeOut}`
 const fadeOutUpAnimation = keyframes`${fadeOutUp}`
 const fadeOutDownAnimation = keyframes`${fadeOutDown}`
 const rollInAnimation = keyframes`${rollIn}`
