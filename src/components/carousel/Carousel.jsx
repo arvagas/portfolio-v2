@@ -1,23 +1,27 @@
 // library imports
-import React, { useState, useEffect, Children } from 'react'
+import React, { useState, useEffect, useContext, Children } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 // styling
 import { StyledCarousel, StyledCarouselMain, StyledCarouselCardsContainer, StyledCarouselCard, StyledCarouselFAIWrapper } from '../../styles/StyledComps'
+// context api
+import { ProjectIndicesContext } from '../../contexts/ProjectIndicesContext'
 
 const Carousel = (props) => {
   let { children } = props
-  const [isCreated, setIsCreated] = useState(false)
+  let {
+    isCreated, setIsCreated,
+    prevIndex, setPrevIndex,
+    leftIndex, setLeftIndex,
+    middleIndex, setMiddleIndex,
+    rightIndex, setRightIndex,
+    nextIndex, setNextIndex
+  } = useContext(ProjectIndicesContext)
   const [compCount, setCompCount] = useState()
-  const [prevIndex, setPrevIndex] = useState()
   const [didPrevChange, setDidPrevChange] = useState(false)
-  const [leftIndex, setLeftIndex] = useState()
   const [didLeftChange, setDidLeftChange] = useState(false)
-  const [middleIndex, setMiddleIndex] = useState()
   const [didMiddleChange, setDidMiddleChange] = useState(false)
-  const [rightIndex, setRightIndex] = useState()
   const [didRightChange, setDidRightChange] = useState(false)
-  const [nextIndex, setNextIndex] = useState()
   const [didNextChange, setDidNextChange] = useState(false)
   const [animType, setAnimType] = useState('startup')
 
@@ -31,9 +35,9 @@ const Carousel = (props) => {
         if (index === 3) setNextIndex(index)
         if (index === Children.count(children)-1) setPrevIndex(index)
       })
-      setCompCount(Children.count(children))
       setIsCreated(true)
     }
+    setCompCount(Children.count(children))
   }, [isCreated, children])
 
   const orderCards = (index) => {
