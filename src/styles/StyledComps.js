@@ -1,17 +1,37 @@
 // library imports
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fadeIn, fadeInDown, rollIn, pulse } from 'react-animations'
+import { fadeIn, fadeInDown, fadeInUp, fadeOutUp, fadeOutDown, rollIn, pulse } from 'react-animations'
 
 // animations
 const fadeInAnimation = keyframes`${fadeIn}`
 const fadeInDownAnimation = keyframes`${fadeInDown}`
+const fadeInUpAnimation = keyframes`${fadeInUp}`
+const fadeOutUpAnimation = keyframes`${fadeOutUp}`
+const fadeOutDownAnimation = keyframes`${fadeOutDown}`
 const rollInAnimation = keyframes`${rollIn}`
 const pulseAnimation = keyframes`${pulse}`
+const moveRightAnimation = keyframes`
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`
+const moveLeftAnimation = keyframes`
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`
 
 // @@@@@@@@@@ Main App Styling
 export const StyledApp = styled.div`
+  overflow: hidden;
 `
 export const StyledHeroImage = styled.div`
   display: flex;
@@ -449,6 +469,7 @@ export const StyledContactSubmit = styled.button`
 
 // @@@@@@@@@@ Carousel
 export const StyledCarousel = styled.div`
+  max-width: 1450px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -458,15 +479,31 @@ export const StyledCarouselMain = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `
 export const StyledCarouselCardsContainer = styled.div`
   display: flex;
-  width: 1200px;
+  justify-content: space-between;
+  max-width: 1450px;
+  width: 100%;
+  position: relative;
+`
+const carouselAnimation = css`
+  animation: 1s ${props => {
+    if (props.animation === 'left-in') return fadeInDownAnimation
+    else if (props.animation === 'left-out') return  fadeOutUpAnimation
+    else if (props.animation === 'right-out') return fadeOutDownAnimation
+    else if (props.animation === 'right-in') return fadeInUpAnimation
+    else if (props.animation === 'move-right') return moveRightAnimation
+    else if (props.animation === 'move-left') return moveLeftAnimation
+  }} ${props => (props.animation === 'left-out' || props.animation === 'right-out' ? 'forwards' : '')}
 `
 export const StyledCarouselCard = styled.div`
   max-width: 400px;
   width: 100%;
   margin: 2rem;
+  ${props => (props.animation ? carouselAnimation : '')};
 `
 export const StyledCarouselFAIWrapper = styled.div`
   display: flex;
@@ -478,9 +515,9 @@ export const StyledCarouselFAIWrapper = styled.div`
   height: 50px;
   padding: 1rem;
   border-radius: 50%;
-&:hover {
-  color: white;
-  background-color: purple;
-}
+  &:hover {
+    color: white;
+    background-color: purple;
+  }
 `
 // #######################################################

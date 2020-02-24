@@ -9,35 +9,69 @@ const Carousel = (props) => {
   let { children } = props
   const [isCreated, setIsCreated] = useState(false)
   const [compCount, setCompCount] = useState()
-  const [leftCard, setLeftCard] = useState()
-  const [leftIndex, setLeftIndex] = useState(0)
+  const [prevIndex, setPrevIndex] = useState()
+  const [didPrevChange, setDidPrevChange] = useState(false)
+  const [leftIndex, setLeftIndex] = useState()
   const [didLeftChange, setDidLeftChange] = useState(false)
-  const [middleCard, setMiddleCard] = useState()
-  const [middleIndex, setMiddleIndex] = useState(1)
+  const [middleIndex, setMiddleIndex] = useState()
   const [didMiddleChange, setDidMiddleChange] = useState(false)
-  const [rightCard, setRightCard] = useState()
-  const [rightIndex, setRightIndex] = useState(2)
+  const [rightIndex, setRightIndex] = useState()
   const [didRightChange, setDidRightChange] = useState(false)
+  const [nextIndex, setNextIndex] = useState()
+  const [didNextChange, setDidNextChange] = useState(false)
+  const [animType, setAnimType] = useState('startup')
 
   // create the carousel, will probably need optimization
   useEffect(() => {
     if (isCreated === false) {
       Children.forEach(children, (child, index) => {
-        if (index === 0) setLeftCard(child)
-        if (index === 1) setMiddleCard(child)
-        if (index === 2) setRightCard(child)
+        if (index === 0) setLeftIndex(index)
+        if (index === 1) setMiddleIndex(index)
+        if (index === 2) setRightIndex(index)
+        if (index === 3) setNextIndex(index)
+        if (index === Children.count(children)-1) setPrevIndex(index)
       })
       setCompCount(Children.count(children))
       setIsCreated(true)
     }
-  }, [])
+  }, [isCreated, children])
 
+  const orderCards = (index) => {
+    if (index === leftIndex) return 1
+    else if (index === middleIndex) return 2
+    else if (index === rightIndex) return 3
+    else return 0
+  }
+
+  const determineAnimation = (index) => {
+    if (index === prevIndex && animType === 'right') return 'left-out'
+    else if (index === leftIndex && animType === 'left') return 'left-in'
+    else if (index === leftIndex && animType === 'right') return 'move-left'
+    else if (index === middleIndex && animType === 'left') return 'move-right'
+    else if (index === middleIndex && animType === 'right') return 'move-left'
+    else if (index === rightIndex && animType === 'left') return 'move-right'
+    else if (index === rightIndex && animType === 'right') return 'right-in'
+    else if (index === nextIndex && animType === 'left') return 'right-out'
+    else return ''
+  }
+  
   const renderCards = () => {
     return (
-      <StyledCarouselCardsContainer style={{display: 'flex', flexDirection: 'row'}}>
-        <StyledCarouselCard>{leftCard}</StyledCarouselCard>
-        <StyledCarouselCard>{middleCard}</StyledCarouselCard>
-        <StyledCarouselCard>{rightCard}</StyledCarouselCard>
+      <StyledCarouselCardsContainer>
+        {Children.map(children, (child, index) => (
+          <StyledCarouselCard
+            style={{
+              display: index === leftIndex || index === middleIndex || index === rightIndex || (index === prevIndex && animType === 'right') || (index === nextIndex && animType === 'left') ? '' : 'none',
+              order: orderCards(index),
+              position: index === prevIndex || index === nextIndex ? 'absolute': '',
+              right: index === nextIndex ? 0 : '',
+              zIndex: index === prevIndex || index === nextIndex ? 5 : ''
+            }}
+            animation={determineAnimation(index)}
+          >
+            {child}
+          </StyledCarouselCard>
+        ))}
       </StyledCarouselCardsContainer>
     )
   }
@@ -45,53 +79,57 @@ const Carousel = (props) => {
   // needs optimization
   const handleLeftChange = () => {
     Children.forEach(children, (child, index) => {
-      if (didLeftChange === false && index === leftIndex-1 || (leftIndex-1 === -1 && index === compCount-1)) {
+      if (didPrevChange === false && (index === prevIndex-1 || (prevIndex-1 === -1 && index === compCount-1))) {
+        setPrevIndex(index)
+        setDidPrevChange(true)
+      } else if (didLeftChange === false && (index === leftIndex-1 || (leftIndex-1 === -1 && index === compCount-1))) {
         setLeftIndex(index)
-        setLeftCard(child)
         setDidLeftChange(true)
-      }
-
-      if (didMiddleChange === false && index === middleIndex-1 || (middleIndex-1 === -1 && index === compCount-1)) {
+      } else if (didMiddleChange === false && (index === middleIndex-1 || (middleIndex-1 === -1 && index === compCount-1))) {
         setMiddleIndex(index)
-        setMiddleCard(child)
         setDidMiddleChange(true)
-      }
-
-      if (didRightChange === false && index === rightIndex-1 || (rightIndex-1 === -1 && index === compCount-1)) {
+      } else if (didRightChange === false && (index === rightIndex-1 || (rightIndex-1 === -1 && index === compCount-1))) {
         setRightIndex(index)
-        setRightCard(child)
         setDidRightChange(true)
+      } else if (didNextChange === false && (index === nextIndex-1 || (nextIndex-1 === -1 && index === compCount-1))) {
+        setNextIndex(index)
+        setDidNextChange(true)
       }
     })
+    setDidPrevChange(false)
     setDidLeftChange(false)
     setDidMiddleChange(false)
     setDidRightChange(false)
+    setDidNextChange(false)
+    setAnimType('left')
   }
 
   // needs optimization
   const handleRightChange = () => {
     Children.forEach(children, (child, index) => {
-      if (didLeftChange === false && index === leftIndex+1 || (leftIndex+1 === compCount && index === 0)) {
+      if (didPrevChange === false && (index === prevIndex+1 || (prevIndex+1 === compCount && index === 0))) {
+        setPrevIndex(index)
+        setDidPrevChange(true)
+      } else if (didLeftChange === false && (index === leftIndex+1 || (leftIndex+1 === compCount && index === 0))) {
         setLeftIndex(index)
-        setLeftCard(child)
         setDidLeftChange(true)
-      }
-
-      if (didMiddleChange === false && index === middleIndex+1 || (middleIndex+1 === compCount && index === 0)) {
+      } else if (didMiddleChange === false && (index === middleIndex+1 || (middleIndex+1 === compCount && index === 0))) {
         setMiddleIndex(index)
-        setMiddleCard(child)
         setDidMiddleChange(true)
-      }
-
-      if (didRightChange === false && index === rightIndex+1 || (rightIndex+1 === compCount && index === 0)) {
+      } else if (didRightChange === false && (index === rightIndex+1 || (rightIndex+1 === compCount && index === 0))) {
         setRightIndex(index)
-        setRightCard(child)
         setDidRightChange(true)
+      } else if (didNextChange === false && (index === nextIndex+1 || (nextIndex+1 === compCount && index === 0))) {
+        setNextIndex(index)
+        setDidNextChange(true)
       }
     })
+    setDidPrevChange(false)
     setDidLeftChange(false)
     setDidMiddleChange(false)
     setDidRightChange(false)
+    setDidNextChange(false)
+    setAnimType('right')
   }
 
   return (
