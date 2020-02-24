@@ -69,7 +69,6 @@ const Carousel = (props) => {
               order: orderCards(index),
               position: index === prevIndex || index === nextIndex ? 'absolute': '',
               right: index === nextIndex ? 0 : '',
-              zIndex: index === prevIndex || index === nextIndex ? 5 : 6
             }}
             animation={determineAnimation(index)}
           >
