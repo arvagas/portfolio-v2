@@ -13,7 +13,7 @@ const LandingPage = () => {
         {/* <StyledIAmA>Performer.</StyledIAmA>
         <StyledIAmA>TV Show Addict.</StyledIAmA>
         <StyledIAmA>Wanderluster.</StyledIAmA> */}
-        <StyledIAmA>Full Stack Web Developer.</StyledIAmA>
+        <StyledIAmA>Full Stack Web Developer</StyledIAmA>
       </Typist>
     </StyledLandingPage>
   )

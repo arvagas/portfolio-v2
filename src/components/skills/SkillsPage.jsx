@@ -1,7 +1,7 @@
 // library imports
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHtml5, faCss3Alt, faJs, faReact, faNode, faPython, faLess, faSass, faGitAlt, faGithub, faSlack, faTrello } from '@fortawesome/free-brands-svg-icons'
+import { faHtml5, faCss3Alt, faJs, faReact, faNode, faPython, faLess, faSass, faGitAlt, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'
 // custom hook imports
 import useWindowDimensions from '../../hooks/useWindowDimensions'
@@ -100,16 +100,6 @@ const SkillsPage = () => {
           <FontAwesomeIcon icon={} size={determineSize()} color='#25A9F3' title='VS Code'/>
           <StyledSkillsText>VS Code</StyledSkillsText>
         </StyledSkillsPair> */}
-
-        <StyledSkillsPair>
-          <FontAwesomeIcon icon={faSlack} size={determineSize()} color='#481449' title='Slack'/>
-          <StyledSkillsText>Slack</StyledSkillsText>
-        </StyledSkillsPair>
-
-        <StyledSkillsPair>
-          <FontAwesomeIcon icon={faTrello} size={determineSize()} color='#0076BA' title='Trello'/>
-          <StyledSkillsText>Trello</StyledSkillsText>
-        </StyledSkillsPair>
       </StyledSkillsContainer>
     </StyledSkillsPage>
   )

@@ -472,9 +472,15 @@ export const StyledAboutPara = styled.p`
   font-size: 2rem;
   text-indent: 4rem;
   margin-top: 2rem;
+  &:last-child {
+    margin-bottom: 2rem;
+  }
   @media ${device.mobileL} {
     font-size: 1.6rem;
     text-indent: 3.2rem;
+    &:last-child {
+      margin-bottom: 1rem;
+    }
   }
   @media ${device.mobileM} {
     font-size: 1.5rem;
