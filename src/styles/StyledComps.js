@@ -134,10 +134,13 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   padding: 2rem 0;
   min-height: 50px;
-  position:absolute;
+  /* position:absolute;
   left:0;
   bottom:0;
-  right:0;
+  right:0; */
+  @media ${device.mobileL} {
+    padding: 2rem 0 1rem;
+  }
 `
 export const StyledSocialContainer = styled.div`
   align-self: center;
@@ -146,12 +149,18 @@ export const StyledSocialContainer = styled.div`
   align-items: center;
   max-width: 500px;
   width: 100%;
+  @media ${device.mobileL} {
+    max-width: 375px;
+  }
 `
 export const StyledProfileImage = styled.img`
   border-radius: 50%;
   width: 75px;
   border: 5px solid purple;
   animation: 2s ${rollInAnimation} forwards;
+  @media ${device.mobileL} {
+    width: 60px;
+  }
 `
 export const StyledSocialLink = styled.a`
   border-radius: 50%;
@@ -183,6 +192,9 @@ export const StyledCopyright = styled.p`
   color: white;
   font-size: 1.6rem;
   text-align: center;
+  @media ${device.mobileL} {
+    font-size: 1rem;
+  }
 `
 // #######################################################
 
@@ -199,12 +211,18 @@ export const StyledName = styled.h1`
   font-weight: bolder;
   color: white;
   margin-bottom: 1.6rem;
+  @media ${device.mobileL} {
+    font-size: 4rem;
+  }
 `
 export const StyledIAmA = styled.h2`
   font-size: 4rem;
   text-align: center;
   color: white;
   margin-bottom: 1rem;
+  @media ${device.mobileL} {
+    font-size: 3rem;
+  }
 `
 // #######################################################
 
@@ -378,6 +396,9 @@ export const StyledAboutContainer = styled.div`
   @media ${device.tablet} {
     max-width: 500px;
   }
+  @media ${device.mobileL} {
+    max-width: 375px;
+  }
 `
 export const StyledAboutImage = styled.img`
   border-radius: 50%;
@@ -386,6 +407,11 @@ export const StyledAboutImage = styled.img`
   position: absolute;
   left: -100px;
   top: -100px;
+  @media ${device.mobileL} {
+    width: 120px;
+    left: 0px;
+    top: -60px;
+  }
 `
 export const StyledAboutContent = styled.div`
   max-width: 650px;
@@ -398,11 +424,18 @@ export const StyledAboutHeader = styled.h2`
   font-size: 3.2rem;
   text-align: center;
   margin-bottom: 5rem;
+  @media ${device.mobileL} {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
 `
 export const StyledAboutPara = styled.p`
   font-size: 2rem;
   text-indent: 4rem;
   margin-top: 2rem;
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+  }
 `
 // #######################################################
 
@@ -426,6 +459,9 @@ export const StyledSkillsContainer = styled.div`
   @media ${device.tablet} {
     max-width: 700px;
   }
+  @media ${device.mobileL} {
+    max-width: 375px;
+  }
 `
 export const StyledSkillsPair = styled.div`
   display: flex;
@@ -433,6 +469,9 @@ export const StyledSkillsPair = styled.div`
   justify-content: center;
   align-items: center;
   margin: 3rem;
+  @media ${device.mobileL} {
+    margin: 1.6rem;
+  }
 `
 export const StyledSkillsText = styled.p`
   color: white;
@@ -440,12 +479,18 @@ export const StyledSkillsText = styled.p`
   @media ${device.tablet} {
     font-size: 2rem;
   }
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+  }
 `
 // #######################################################
 
 // @@@@@@@@@@ Contact Page
 export const StyledContactPage = styled.div`
+  flex: 1;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   animation: 1s ${fadeInAnimation};
 `
@@ -456,43 +501,61 @@ export const StyledContactForm = styled.form`
   align-items: center;
   background-color: white;
   border-radius: 20px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   max-width: 450px;
   width: 100%;
   max-height: 550px;
   height: 100%;
   padding: 2rem;
+  @media ${device.mobileL} {
+    max-width: 375px;
+    max-height: 450px;
+  }
 `
 export const StyledContactHeader = styled.h2`
   font-size: 3.2rem;
+  @media ${device.mobileL} {
+    font-size: 2.4rem;
+  }
 `
 export const StyledContactNotice = styled.p`
   font-size: 1.6rem;
   text-align: center;
+  @media ${device.mobileL} {
+    font-size: 1.4rem;
+  }
 `
 export const StyledContactLabel = styled.label`
   display: flex;
   flex-direction: column;
   font-size: 2rem;
   width: 100%;
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+  }
 `
 export const StyledContactInput = styled.input`
   padding: 5px 10px;
   font-size: 1.6rem;
   margin: 5px 0 0;
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+  }
 `
 export const StyledContactTextArea = styled.textarea`
   padding: 5px 10px;
   font-size: 1.6rem;
   margin: 5px 0 0;
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+  }
 `
 export const StyledContactError = styled.p`
   font-size: 1.4rem;
   color: red;
   text-align: center;
+  @media ${device.mobileL} {
+    font-size: 1rem;
+  }
 `
 export const StyledContactSubmit = styled.button`
   cursor: pointer;
@@ -512,6 +575,10 @@ export const StyledContactSubmit = styled.button`
     border: 1px solid white;
     pointer-events: none;
     cursor: default;
+  }
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+    padding: 6px;
   }
 `
 // #######################################################
