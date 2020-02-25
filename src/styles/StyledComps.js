@@ -105,15 +105,14 @@ export const StyledMobileMenuBar = styled.div.attrs({
   display: none;
   &.${topbar} {
     transform: rotate(-45deg) translate(-9px, 6px);
-    background-color: red;
+    background-color: purple;
   }
   &.${middlebar} {
     opacity: 0;
-    background-color: red;
   }
   &.${bottombar} {
     transform: rotate(45deg) translate(-8px, -8px);
-    background-color: red;
+    background-color: purple;
   }
   @media ${device.mobileL} {
     display: flex;
@@ -124,7 +123,7 @@ export const StyledRoutesContainer = styled.div`
   @media ${device.mobileL} {
     align-items: center;
     flex-direction: column;
-    background-color: sandybrown;
+    background-color: darkorange;
     border-radius: 10px 0 10px 10px;
     position: absolute;
     right: 0px;
