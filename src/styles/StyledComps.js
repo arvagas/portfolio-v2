@@ -153,7 +153,11 @@ export const StyledNavLink = styled(NavLink).attrs({
   @media ${device.tablet} {
     font-size: 2.4rem;
   }
+  @media (max-width: 640px) {
+    font-size: 2rem;
+  }
   @media ${device.mobileL} {
+    font-size: 2.4rem;
     padding: 2rem;
     width: 100%;
     text-align: center;
@@ -171,7 +175,11 @@ export const StyledNavA = styled.a`
   @media ${device.tablet} {
     font-size: 2.4rem;
   }
+  @media (max-width: 640px) {
+    font-size: 2rem;
+  }
   @media ${device.mobileL} {
+    font-size: 2.4rem;
     padding: 2rem;
     width: 100%;
     text-align: center;
@@ -858,8 +866,17 @@ export const StyledCarouselCard = styled.div`
   @media ${device.tablet} {
     max-width: 300px;
   }
+  @media (max-width: 640px) {
+    max-width: 250px;
+  }
+  @media (max-width: 390px) {
+    max-width: 285px;
+  }
   @media ${device.mobileM} {
     max-width: 275px;
+  }
+  @media (max-width: 350px) {
+    max-width: 230px;
   }
   @media ${device.mobileS} {
     max-width: 220px;
