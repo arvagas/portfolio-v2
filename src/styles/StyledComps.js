@@ -363,6 +363,19 @@ export const StyledProjectsModal = styled.div`
   background-color: white;
   border-radius: 20px;
   padding: 20px;
+  @media ${device.tablet} {
+    max-width: 700px;
+  }
+  @media ${device.mobileL} {
+    max-width: 400px;
+    max-height: 500px;
+  }
+  @media ${device.mobileM} {
+    max-width: 350px;
+  }
+  @media ${device.mobileS} {
+    max-width: 300px;
+  }
 `
 export const StyledModalX = styled.div`
   position: absolute;
@@ -376,18 +389,32 @@ export const StyledModalX = styled.div`
   &:hover {
     color: red;
   }
+  @media ${device.mobileS} {
+    font-size: 1.6rem;
+    right: 8px;
+    top: 8px;
+  }
 `
 export const StyledModalTitle = styled.h1`
   font-size: 3.2rem;
   width: 100%;
   padding-bottom: 10px;
   border-bottom: 1px solid gray;
+  @media ${device.mobileL} {
+    font-size: 2rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.6rem;
+  }
 `
 export const StyledModalPhoto = styled.img`
   align-self: center;
   max-width: 750px;
   width: 100%;
   margin: 2rem 0;
+  @media ${device.mobileL} {
+    margin: 1rem 0;
+  }
 `
 export const StyledModalMiddle = styled.div`
   flex: 1;
@@ -399,6 +426,12 @@ export const StyledModalMiddle = styled.div`
 export const StyledModalContent = styled.p`
   font-size: 2rem;
   margin-bottom: 1rem;
+  @media ${device.mobileL} {
+    font-size: 1.4rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.3rem;
+  }
 `
 export const StyledModalUList = styled.ul`
   list-style-type: circle;
@@ -408,9 +441,21 @@ export const StyledModalUList = styled.ul`
 export const StyledModalResp = styled.li`
   font-size: 2rem;
   padding: 0;
+  @media ${device.mobileL} {
+    font-size: 1.4rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.3rem;
+  }
 `
 export const StyledModalContentTech = styled.span`
   font-size: 2rem;
+  @media ${device.mobileL} {
+    font-size: 1.4rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 1.3rem;
+  }
 `
 export const StyledModalBottom = styled.div`
   display: flex;

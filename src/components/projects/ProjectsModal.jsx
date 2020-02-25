@@ -2,10 +2,18 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faExternalLinkAlt, faPalette } from '@fortawesome/free-solid-svg-icons'
+// custom hook imports
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 // styling
 import { StyledProjectsModal, StyledModalX, StyledModalTitle, StyledModalPhoto, StyledModalMiddle, StyledModalContent, StyledModalUList, StyledModalResp, StyledModalContentTech, StyledModalBottom, StyledModalLink } from '../../styles/StyledComps'
 
 const ProjectsModal = ({ project, showModal, handleModal }) => {
+  let { windowWidth } = useWindowDimensions()
+
+  const determineSize = () => {
+    if (windowWidth <= 425) return '2x'
+    else return '3x'
+  }
 
   if (!showModal) return null
   return (
@@ -36,16 +44,16 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
       <StyledModalBottom>
         {!project.mockup ? '' : (
           <StyledModalLink href={project.mockup} target='_blank' rel='noopener noreferrer'>
-            <FontAwesomeIcon icon={faPalette} size='3x' title='View Mockup'/>
+            <FontAwesomeIcon icon={faPalette} size={determineSize()} title='View Mockup'/>
           </StyledModalLink>
         )}
 
         <StyledModalLink href={project.github} target='_blank' rel='noopener noreferrer'>
-          <FontAwesomeIcon icon={faCode} size='3x' title='View Code'/>
+          <FontAwesomeIcon icon={faCode} size={determineSize()} title='View Code'/>
         </StyledModalLink>
 
         <StyledModalLink href={project.deploy} target='_blank' rel='noopener noreferrer'>
-          <FontAwesomeIcon icon={faExternalLinkAlt} size='3x' title='View Site'/>
+          <FontAwesomeIcon icon={faExternalLinkAlt} size={determineSize()} title='View Site'/>
         </StyledModalLink>
       </StyledModalBottom>
     </StyledProjectsModal>
