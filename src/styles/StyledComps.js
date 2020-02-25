@@ -349,6 +349,9 @@ export const StyledCardTitle = styled.h2`
   @media ${device.tablet} {
     font-size: 2rem;
   }
+  @media (max-width: 360px) {
+    font-size: 1.8rem;
+  }
   @media ${device.mobileS} {
     font-size: 1.5rem;
   }
