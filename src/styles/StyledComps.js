@@ -74,8 +74,8 @@ export const StyledNavbar = styled.header`
   justify-content: space-between;
   align-items: center;
   min-height: 50px;
-  /* border-bottom: 1px solid black; */
   animation: 2s ${fadeInDownAnimation};
+  position: relative;
 `
 export const StyledNavHome = styled(NavLink)`
   padding: 1rem;
@@ -87,9 +87,52 @@ export const StyledNavHome = styled(NavLink)`
     font-size: 2.4rem;
   }
 `
+export const StyledMobileMenuContainer = styled.div`
+  padding: 1rem;
+  z-index: 10;
+`
+const topbar = 'top-bar'
+const middlebar = 'middle-bar'
+const bottombar = 'bottom-bar'
+export const StyledMobileMenuBar = styled.div.attrs({
+  topbar, middlebar, bottombar
+})`
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+  display: none;
+  &.${topbar} {
+    transform: rotate(-45deg) translate(-9px, 6px);
+    background-color: red;
+  }
+  &.${middlebar} {
+    opacity: 0;
+    background-color: red;
+  }
+  &.${bottombar} {
+    transform: rotate(45deg) translate(-8px, -8px);
+    background-color: red;
+  }
+  @media ${device.mobileL} {
+    display: flex;
+  }
+`
 export const StyledRoutesContainer = styled.div`
-/* padding: 1rem;
-text-decoration: none; */
+  display: flex;
+  @media ${device.mobileL} {
+    align-items: center;
+    flex-direction: column;
+    background-color: sandybrown;
+    border-radius: 10px 0 10px 10px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 9;
+    padding-right: 40px;
+    transition: 0.4s;
+  }
 `
 const activenav = 'active-nav'
 export const StyledNavLink = styled(NavLink).attrs({
@@ -113,6 +156,11 @@ export const StyledNavLink = styled(NavLink).attrs({
   @media ${device.tablet} {
     font-size: 2.4rem;
   }
+  @media ${device.mobileL} {
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+  }
 `
 export const StyledNavA = styled.a`
   padding: 1rem;
@@ -125,6 +173,11 @@ export const StyledNavA = styled.a`
   }
   @media ${device.tablet} {
     font-size: 2.4rem;
+  }
+  @media ${device.mobileL} {
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
   }
 `
 // #######################################################
