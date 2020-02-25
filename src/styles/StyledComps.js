@@ -869,13 +869,16 @@ export const StyledCarouselCard = styled.div`
   @media (max-width: 640px) {
     max-width: 250px;
   }
+  @media ${device.mobileL} {
+    max-width: 300px;
+  }
   @media (max-width: 390px) {
     max-width: 285px;
   }
   @media ${device.mobileM} {
-    max-width: 275px;
+    max-width: 270px;
   }
-  @media (max-width: 350px) {
+  @media (max-width: 360px) {
     max-width: 230px;
   }
   @media ${device.mobileS} {
