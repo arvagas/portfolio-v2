@@ -2,7 +2,7 @@
 import styled, { keyframes, css } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fadeIn, fadeInDown, fadeInUp, fadeOut, fadeOutUp, fadeOutDown, fadeOutLeft, fadeOutRight, rollIn, pulse } from 'react-animations'
+import { fadeIn, fadeInDown, fadeInLeft, fadeInRight, fadeOutLeft, fadeOutRight, rollIn, pulse } from 'react-animations'
 
 // media queries
 const size = {
@@ -28,10 +28,8 @@ const device = {
 // animations
 const fadeInAnimation = keyframes`${fadeIn}`
 const fadeInDownAnimation = keyframes`${fadeInDown}`
-const fadeInUpAnimation = keyframes`${fadeInUp}`
-const fadeOutAnimation = keyframes`${fadeOut}`
-const fadeOutUpAnimation = keyframes`${fadeOutUp}`
-const fadeOutDownAnimation = keyframes`${fadeOutDown}`
+const fadeInLeftAnimation = keyframes`${fadeInLeft}`
+const fadeInRightAnimation = keyframes`${fadeInRight}`
 const fadeOutLeftAnimation = keyframes`${fadeOutLeft}`
 const fadeOutRightAnimation = keyframes`${fadeOutRight}`
 const rollInAnimation = keyframes`${rollIn}`
@@ -340,11 +338,11 @@ export const StyledCard = styled.div`
 export const StyledCardTitle = styled.h2`
   font-size: 2.4rem;
   margin: 1rem 0 2rem;
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     font-size: 2rem;
   }
-  @media ${device.tablet} {
-    font-size: 1.6rem;
+  @media ${device.mobileS} {
+    font-size: 1.5rem;
   }
 `
 export const StyledCardPhotoContainer = styled.div`
@@ -791,6 +789,18 @@ export const StyledCarousel = styled.div`
   @media ${device.laptop} {
     max-width: 950px;
   }
+  @media ${device.tablet} {
+    max-width: 700px;
+  }
+  @media ${device.mobileL} {
+    max-width: 400px;
+  }
+  @media ${device.mobileM} {
+    max-width: 350px;
+  }
+  @media ${device.mobileS} {
+    max-width: 300px;
+  }
 `
 export const StyledCarouselMain = styled.div`
   display: flex;
@@ -808,16 +818,25 @@ export const StyledCarouselCardsContainer = styled.div`
   @media ${device.laptop} {
     max-width: 800px;
   }
+  @media ${device.mobileL} {
+    justify-content: center;
+  }
 `
 const carouselAnimation = css`
-  animation: 1s ${props => {
-    if (props.animation === 'left-in') return fadeInDownAnimation
-    else if (props.animation === 'left-out') return  fadeOutLeftAnimation
-    else if (props.animation === 'right-out') return fadeOutRightAnimation
-    else if (props.animation === 'right-in') return fadeInDownAnimation
+  animation: 1s
+  /* choose animation */
+  ${props => {
+    if (props.animation === 'left-in-top') return fadeInDownAnimation
+    else if (props.animation === 'left-in-side') return  fadeInLeftAnimation
+    else if (props.animation === 'left-out-side') return  fadeOutLeftAnimation
+    else if (props.animation === 'right-out-side') return fadeOutRightAnimation
+    else if (props.animation === 'right-in-side') return  fadeInRightAnimation
+    else if (props.animation === 'right-in-top') return fadeInDownAnimation
     else if (props.animation === 'move-right') return moveRightAnimation
     else if (props.animation === 'move-left') return moveLeftAnimation
-  }} ${props => (props.animation === 'left-out' || props.animation === 'right-out' ? 'forwards' : '')}
+  }}
+  /* if it stays at last position */
+  ${props => (props.animation === 'left-out-side' || props.animation === 'right-out-side' ? 'forwards' : '')};
 `
 export const StyledCarouselCard = styled.div`
   max-width: 400px;
@@ -834,15 +853,23 @@ export const StyledCarouselCard = styled.div`
     max-width: 275px;
   }
   @media ${device.laptop} {
-    max-width: 250px;
+    max-width: 375px;
   }
   @media ${device.tablet} {
-    max-width: 200px;
+    max-width: 300px;
+  }
+  @media ${device.mobileM} {
+    max-width: 275px;
+  }
+  @media ${device.mobileS} {
+    max-width: 220px;
   }
 `
 export const StyledCarouselFAIWrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-content: center;
+  align-items: center;
   color: purple;
   background-color: white;
   cursor: pointer;
@@ -854,6 +881,14 @@ export const StyledCarouselFAIWrapper = styled.div`
   &:hover {
     color: white;
     background-color: purple;
+  }
+  @media ${device.tablet} {
+    width: 35px;
+    height: 35px;
+  }
+  @media ${device.mobileM} {
+    width: 30px;
+    height: 30px;
   }
 `
 // #######################################################

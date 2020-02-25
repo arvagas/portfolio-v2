@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useContext, Children } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+// custom hook imports
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 // styling
 import { StyledCarousel, StyledCarouselMain, StyledCarouselCardsContainer, StyledCarouselCard, StyledCarouselFAIWrapper } from '../../styles/StyledComps'
 // context api
@@ -17,6 +19,7 @@ const Carousel = (props) => {
     rightIndex, setRightIndex,
     nextIndex, setNextIndex
   } = useContext(ProjectIndicesContext)
+  let { windowWidth } = useWindowDimensions()
   const [compCount, setCompCount] = useState()
   const [didPrevChange, setDidPrevChange] = useState(false)
   const [didLeftChange, setDidLeftChange] = useState(false)
@@ -47,36 +50,95 @@ const Carousel = (props) => {
     else return 0
   }
 
+  const determineSize = () => {
+    if (windowWidth <= 768) return '2x'
+    else return '3x'
+  }
+
   const determineAnimation = (index) => {
-    if (index === prevIndex && animType === 'right') return 'left-out'
-    else if (index === leftIndex && animType === 'left') return 'left-in'
-    else if (index === leftIndex && animType === 'right') return 'move-left'
-    else if (index === middleIndex && animType === 'left') return 'move-right'
-    else if (index === middleIndex && animType === 'right') return 'move-left'
-    else if (index === rightIndex && animType === 'left') return 'move-right'
-    else if (index === rightIndex && animType === 'right') return 'right-in'
-    else if (index === nextIndex && animType === 'left') return 'right-out'
-    else return ''
+    if (windowWidth <= 425) {
+      if (index === prevIndex && animType === 'right') return 'left-out-side'
+      else if (index === leftIndex && animType === 'left') return 'left-in-side'
+      else if (index === leftIndex && animType === 'right') return 'right-in-side'
+      else if (index === middleIndex && animType === 'left') return 'right-out-side'
+      else return ''
+    } else if (windowWidth <= 1024) {
+      if (index === prevIndex && animType === 'right') return 'left-out-side'
+      else if (index === leftIndex && animType === 'left') return 'left-in-side'
+      else if (index === leftIndex && animType === 'right') return 'move-left'
+      else if (index === middleIndex && animType === 'left') return 'move-right'
+      else if (index === middleIndex && animType === 'right') return 'right-in-side'
+      else if (index === rightIndex && animType === 'left') return 'right-out-side'
+      else return ''
+    } else {
+      if (index === prevIndex && animType === 'right') return 'left-out-side'
+      else if (index === leftIndex && animType === 'left') return 'left-in-top'
+      else if (index === leftIndex && animType === 'right') return 'move-left'
+      else if (index === middleIndex && animType === 'left') return 'move-right'
+      else if (index === middleIndex && animType === 'right') return 'move-left'
+      else if (index === rightIndex && animType === 'left') return 'move-right'
+      else if (index === rightIndex && animType === 'right') return 'right-in-top'
+      else if (index === nextIndex && animType === 'left') return 'right-out-side'
+      else return ''
+    }
   }
   
   const renderCards = () => {
-    return (
-      <StyledCarouselCardsContainer>
-        {Children.map(children, (child, index) => (
-          <StyledCarouselCard
-            style={{
-              display: index === leftIndex || index === middleIndex || index === rightIndex || (index === prevIndex && animType === 'right') || (index === nextIndex && animType === 'left') ? '' : 'none',
-              order: orderCards(index),
-              position: index === prevIndex || index === nextIndex ? 'absolute': '',
-              right: index === nextIndex ? 0 : '',
-            }}
-            animation={determineAnimation(index)}
-          >
-            {child}
-          </StyledCarouselCard>
-        ))}
-      </StyledCarouselCardsContainer>
-    )
+    if (windowWidth <= 425) {
+      return (
+        <StyledCarouselCardsContainer>
+          {Children.map(children, (child, index) => (
+            <StyledCarouselCard
+              style={{
+                display: index === leftIndex || (index === prevIndex && animType === 'right') || (index === middleIndex && animType === 'left') ? '' : 'none',
+                order: orderCards(index),
+                position: index === prevIndex || index === middleIndex ? 'absolute': '',
+                right: index === middleIndex ? 0 : '',
+              }}
+              animation={determineAnimation(index)}
+            >
+              {child}
+            </StyledCarouselCard>
+          ))}
+        </StyledCarouselCardsContainer>
+      )
+    } else if (windowWidth <= 1024) {
+      return (
+        <StyledCarouselCardsContainer>
+          {Children.map(children, (child, index) => (
+            <StyledCarouselCard
+              style={{
+                display: index === leftIndex || index === middleIndex || (index === prevIndex && animType === 'right') || (index === rightIndex && animType === 'left') ? '' : 'none',
+                order: orderCards(index),
+                position: index === prevIndex || index === rightIndex ? 'absolute': '',
+                right: index === rightIndex ? 0 : '',
+              }}
+              animation={determineAnimation(index)}
+            >
+              {child}
+            </StyledCarouselCard>
+          ))}
+        </StyledCarouselCardsContainer>
+      )
+    } else {
+      return (
+        <StyledCarouselCardsContainer>
+          {Children.map(children, (child, index) => (
+            <StyledCarouselCard
+              style={{
+                display: index === leftIndex || index === middleIndex || index === rightIndex || (index === prevIndex && animType === 'right') || (index === nextIndex && animType === 'left') ? '' : 'none',
+                order: orderCards(index),
+                position: index === prevIndex || index === nextIndex ? 'absolute': '',
+                right: index === nextIndex ? 0 : '',
+              }}
+              animation={determineAnimation(index)}
+            >
+              {child}
+            </StyledCarouselCard>
+          ))}
+        </StyledCarouselCardsContainer>
+      )
+    } 
   }
 
   // needs optimization
@@ -139,13 +201,13 @@ const Carousel = (props) => {
     <StyledCarousel>
       <StyledCarouselMain>
         <StyledCarouselFAIWrapper onClick={()=>handleLeftChange()}>
-          <FontAwesomeIcon icon={faChevronLeft} size='3x' title='Previous Project'/>
+          <FontAwesomeIcon icon={faChevronLeft} size={determineSize()} title='Previous Project'/>
         </StyledCarouselFAIWrapper>
 
         {renderCards()}
 
         <StyledCarouselFAIWrapper onClick={()=>handleRightChange()}>
-          <FontAwesomeIcon icon={faChevronRight} size='3x' title='Next Project'/>
+          <FontAwesomeIcon icon={faChevronRight} size={determineSize()} title='Next Project'/>
         </StyledCarouselFAIWrapper>
       </StyledCarouselMain>
 
