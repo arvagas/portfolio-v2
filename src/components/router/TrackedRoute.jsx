@@ -7,7 +7,7 @@ const TrackedRoute = ({ exact, path, component: Component, location }) => {
   // run once to grab page; should update user's current page as they switch
   useEffect(() => {
     ReactGA.pageview(location.pathname + location.search)
-  }, [location.pathname])
+  }, [location.pathname, location.search])
 
   return (
     <Route exact={exact} path={path} component={Component}/>

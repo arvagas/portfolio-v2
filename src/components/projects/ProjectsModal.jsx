@@ -27,8 +27,8 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
           <StyledModalContent>{project.desc}</StyledModalContent>
 
           <StyledModalUList>
-            {project.resp.map(bullet => (
-              <StyledModalResp>{bullet}</StyledModalResp>
+            {project.resp.map((bullet, index) => (
+              <StyledModalResp key={Date.now()+index}>{bullet}</StyledModalResp>
             ))}
           </StyledModalUList>  
         </div>

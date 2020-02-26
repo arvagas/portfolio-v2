@@ -41,7 +41,7 @@ const Carousel = (props) => {
       setIsCreated(true)
     }
     setCompCount(Children.count(children))
-  }, [isCreated, children])
+  }, [isCreated, setIsCreated, setLeftIndex, setMiddleIndex, setRightIndex, setNextIndex, setPrevIndex, children])
 
   const orderCards = (index) => {
     if (index === leftIndex) return 1
