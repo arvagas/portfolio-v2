@@ -1,5 +1,7 @@
 {
-  "env": {
-    "REACT_APP_GA_TRACKING_ID": "@react_app_ga_tracking_id"
+  "build": {
+    "env": {
+      "REACT_APP_GA_TRACKING_ID": "@react_app_ga_tracking_id"
+    }
   }
 }
