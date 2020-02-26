@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 import useClickOutside from '../hooks/useClickOutside'
 //styling
-import { StyledNavbar, StyledNavHome, StyledRoutesContainer, StyledMobileMenuContainer, StyledMobileMenuBar, StyledNavLink, StyledNavA } from '../styles/StyledComps'
+import { StyledNavbar, StyledNavHome, StyledRoutesContainer, StyledMobileMenuContainer, StyledMobileMenuBar, StyledNavLink, StyledNavGAOutboundLink } from '../styles/StyledComps'
 
 const NavBar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false)
@@ -30,7 +30,15 @@ const NavBar = () => {
         <StyledNavLink to='/projects' activeClassName='active-nav' onClick={() => handleMobileMenu()}>Projects</StyledNavLink>
         <StyledNavLink to='/about' activeClassName='active-nav' onClick={() => handleMobileMenu()}>About</StyledNavLink>
         <StyledNavLink to='/skills' activeClassName='active-nav' onClick={() => handleMobileMenu()}>Skills</StyledNavLink>
-        <StyledNavA href='https://www.canva.com/design/DADzh2Zobz4/_x6AoOtuGPsIAn_-YA8SPQ/view?utm_content=DADzh2Zobz4&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton' target='_blank' rel='noopener noreferrer' onClick={() => handleMobileMenu()}>Resume</StyledNavA>
+        <StyledNavGAOutboundLink
+          eventLabel='Resume'
+          to='https://www.canva.com/design/DADzh2Zobz4/_x6AoOtuGPsIAn_-YA8SPQ/view?utm_content=DADzh2Zobz4'
+          target='_blank'
+          rel='noopener noreferrer'
+          onClick={() => handleMobileMenu()}
+        >
+          Resume
+        </StyledNavGAOutboundLink>
         <StyledNavLink to='/contact' activeClassName='active-nav' onClick={() => handleMobileMenu()}>Contact</StyledNavLink>
       </StyledRoutesContainer>
     </StyledNavbar>

@@ -1,6 +1,7 @@
 // library imports
 import styled, { keyframes, css } from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import ReactGA from 'react-ga'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fadeIn, fadeInDown, fadeInLeft, fadeInRight, fadeOutLeft, fadeOutRight, rollIn, pulse } from 'react-animations'
 
@@ -163,7 +164,7 @@ export const StyledNavLink = styled(NavLink).attrs({
     text-align: center;
   }
 `
-export const StyledNavA = styled.a`
+export const StyledNavGAOutboundLink = styled(ReactGA.OutboundLink)`
   padding: 1rem;
   text-decoration: none;
   font-size: 3rem;
