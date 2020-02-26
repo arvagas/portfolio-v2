@@ -23,10 +23,10 @@ browserHistory.listen((location, action) => {
 
 // add title heads to components
 const LandingPage = withTitle({ component: Landing })
-const ProjectsPage = withTitle({ component: Projects, title: 'Arvin Agas | Projects' })
-const AboutPage = withTitle({ component: About, title: 'Arvin Agas | About' })
-const SkillsPage = withTitle({ component: Skills, title: 'Arvin Agas | Skills' })
-const ContactPage = withTitle({ component: Contact, title: 'Arvin Agas | Contact' })
+const ProjectsPage = withTitle({ component: Projects, title: 'Projects' })
+const AboutPage = withTitle({ component: About, title: 'About' })
+const SkillsPage = withTitle({ component: Skills, title: 'Skills' })
+const ContactPage = withTitle({ component: Contact, title: 'Contact' })
 
 const AppRouter = () => {
   const [isCreated, setIsCreated] = useState(false)

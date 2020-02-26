@@ -7,7 +7,7 @@ const UpdateTitle = ({ title }) => {
 
   return (
     <Helmet>
-      <title>{title ? title : defaultTitle}</title>
+      <title>{title ? `${defaultTitle} | ${title}` : defaultTitle}</title>
     </Helmet>
   )
 }
