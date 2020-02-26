@@ -234,7 +234,7 @@ export const StyledProfileImage = styled.img`
     border: 2px solid purple;
   }
 `
-export const StyledSocialLink = styled.a`
+export const StyledSocialLink = styled(ReactGA.OutboundLink)`
   border-radius: 50%;
   background-color: white;
   padding: 8px;

@@ -23,11 +23,11 @@ const Footer = () => {
       <StyledSocialContainer>
         <StyledProfileImage src={headshot} alt='Picture of Arvin Agas'/>
 
-        <StyledSocialLink href='https://www.github.com/arvagas' target='_blank' rel='noopener noreferrer' delay='2s'>
+        <StyledSocialLink eventLabel='Github' to='https://www.github.com/arvagas' target='_blank' rel='noopener noreferrer' delay='2s'>
           <FontAwesomeIcon icon={faGithub} size={determineSize()} title='Visit Github'/>
         </StyledSocialLink>
 
-        <StyledSocialLink href='https://www.linkedin.com/in/arvinagas/' target='_blank' rel='noopener noreferrer' delay='3s'>
+        <StyledSocialLink eventLabel='LinkedIn' to='https://www.linkedin.com/in/arvinagas/' target='_blank' rel='noopener noreferrer' delay='3s'>
           <FontAwesomeIcon icon={faLinkedinIn} size={determineSize()} title='Visit LinkedIn'/>
         </StyledSocialLink>
 
