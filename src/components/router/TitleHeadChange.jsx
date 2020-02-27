@@ -5,9 +5,15 @@ import Helmet from 'react-helmet'
 const UpdateTitle = ({ title }) => {
   const defaultTitle = 'Arvin Agas'
 
+  const newTitleIs = () => {
+    if (!title) return defaultTitle
+    else if (title === 'Page Not Found') return `${title} | ${defaultTitle}`
+    else return `${defaultTitle} | ${title}`
+  }
+
   return (
     <Helmet>
-      <title>{title ? `${defaultTitle} | ${title}` : defaultTitle}</title>
+      <title>{newTitleIs()}</title>
     </Helmet>
   )
 }
