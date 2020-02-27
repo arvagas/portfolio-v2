@@ -1,14 +1,18 @@
+// library imports
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-
+// component imports
 import App from './App'
-
-import './index.css'
+// styles
+// import './index.css'
+import { GlobalStyle } from './styles/GlobalStyle'
+// other
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <Router>
+    <GlobalStyle />
     <App />
   </Router>,
 document.getElementById('root'))

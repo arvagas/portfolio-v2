@@ -10,7 +10,6 @@ import bg2 from './assets/backgrounds/bg2.jpg'
 import bg3 from './assets/backgrounds/bg3.jpg'
 // styling
 import { StyledApp, StyledHeroImage } from './styles/StyledComps'
-import './styles/index.scss'
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max))
