@@ -13,11 +13,11 @@ const UpdateTitle = ({ title }) => {
 }
 
 export const withTitle = ({ component: Component, title }) => {
-  return () => {
+  return (props) => {
     return (
       <>
         <UpdateTitle title={title} />
-        <Component />
+        <Component {...props} />
       </>
     )
   }

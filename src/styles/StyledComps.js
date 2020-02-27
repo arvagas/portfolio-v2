@@ -791,6 +791,70 @@ export const StyledContactSubmit = styled.button`
 `
 // #######################################################
 
+// @@@@@@@@@@ Not Found Page
+export const StyledNotFoundPage = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background:radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 110%); */
+`
+export const StyledNotFoundContainer = styled.div`
+  width: 100%;
+  max-height: 450px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  transform: skew(0deg, 0deg);
+  /* background: radial-gradient(circle,#e6e7e0 40%,rgba(43,42,161,.6) 110%);
+  mix-blend-mode: color-burn;
+  position: absolute;
+  width: 100vw;
+  height: 100vh; */
+  @media ${device.laptop} {
+    max-height: 350px;
+  }
+  @media ${device.tablet} {
+    max-height: 250px;
+  }
+  @media ${device.mobileL} {
+    max-height: 225px;
+  }
+  @media ${device.mobileM} {
+    max-height: 200px;
+  }
+  @media ${device.mobileS} {
+    max-height: 175px;
+  }
+`
+export const StyledNotFoundImg = styled.img`
+  max-width: 800px;
+  width: 100%;
+  position: absolute;
+  animation: 1s ${pulseAnimation} infinite 0s;
+  @media ${device.laptop} {
+    max-width: 600px;
+  }
+  @media ${device.tablet} {
+    max-width: 400px;
+  }
+  @media ${device.mobileL} {
+    max-width: 350px;
+  }
+  @media ${device.mobileM} {
+    max-width: 325px;
+  }
+  @media ${device.mobileS} {
+    max-width: 300px;
+  }
+`
+// #######################################################
+
 // @@@@@@@@@@ Carousel
 export const StyledCarousel = styled.div`
   max-width: 1450px;
