@@ -10,6 +10,7 @@ import Projects from '../projects/ProjectsPage'
 import About from '../about/AboutPage'
 import Skills from '../skills/SkillsPage'
 import Contact from '../contact/ContactPage'
+import NotFound from '../NotFoundPage'
 import { withTitle } from './TitleHeadChange'
 // context api
 import { ProjectIndicesContext } from '../../contexts/ProjectIndicesContext'
@@ -27,6 +28,7 @@ const ProjectsPage = withTitle({ component: Projects, title: 'Projects' })
 const AboutPage = withTitle({ component: About, title: 'About' })
 const SkillsPage = withTitle({ component: Skills, title: 'Skills' })
 const ContactPage = withTitle({ component: Contact, title: 'Contact' })
+const NotFoundPage = withTitle({ component: NotFound, title: 'Page Not Found' })
 
 const AppRouter = () => {
   const [isCreated, setIsCreated] = useState(false)
@@ -53,6 +55,7 @@ const AppRouter = () => {
         <TrackedRoute path='/about' component={AboutPage} />
         <TrackedRoute path='/skills' component={SkillsPage} />
         <TrackedRoute path='/contact' component={ContactPage} />
+        <TrackedRoute component={NotFoundPage} />
       </Switch>
     </ProjectIndicesContext.Provider>
   )

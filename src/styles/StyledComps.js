@@ -791,6 +791,20 @@ export const StyledContactSubmit = styled.button`
 `
 // #######################################################
 
+// @@@@@@@@@@ Not Found Page
+export const StyledNotFoundPage = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+export const StyledNotFoundImg = styled.img`
+  max-width: 800px;
+  width: 100%;
+`
+// #######################################################
+
 // @@@@@@@@@@ Carousel
 export const StyledCarousel = styled.div`
   max-width: 1450px;
