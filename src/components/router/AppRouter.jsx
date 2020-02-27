@@ -1,10 +1,9 @@
 // library imports
-import React, { useState } from 'react'
-import { Switch } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Switch, Route, useLocation } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import ReactGA from 'react-ga'
 // component imports
-import TrackedRoute from './TrackedRoute'
 import Landing from '../LandingPage'
 import Projects from '../projects/ProjectsPage'
 import About from '../about/AboutPage'
@@ -37,6 +36,7 @@ const AppRouter = () => {
   const [middleIndex, setMiddleIndex] = useState()
   const [rightIndex, setRightIndex] = useState()
   const [nextIndex, setNextIndex] = useState()
+  const location = useLocation()
 
   let value = {
     isCreated, setIsCreated,
@@ -46,16 +46,21 @@ const AppRouter = () => {
     rightIndex, setRightIndex,
     nextIndex, setNextIndex
   }
+  
+  // will update ga every time a different page is navigated
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search)
+  }, [location])
 
   return (
     <ProjectIndicesContext.Provider value={value}>
       <Switch style={{flex: 1}}>
-        <TrackedRoute exact path='/' component={LandingPage} />
-        <TrackedRoute path='/projects' component={ProjectsPage} />
-        <TrackedRoute path='/about' component={AboutPage} />
-        <TrackedRoute path='/skills' component={SkillsPage} />
-        <TrackedRoute path='/contact' component={ContactPage} />
-        <TrackedRoute component={NotFoundPage} />
+        <Route exact path='/' component={LandingPage} />
+        <Route path='/projects' component={ProjectsPage} />
+        <Route path='/about' component={AboutPage} />
+        <Route path='/skills' component={SkillsPage} />
+        <Route path='/contact' component={ContactPage} />
+        <Route component={NotFoundPage} />
       </Switch>
     </ProjectIndicesContext.Provider>
   )
