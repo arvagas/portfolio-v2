@@ -798,10 +798,30 @@ export const StyledNotFoundPage = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* background:radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 110%); */
+`
+export const StyledNotFoundContainer = styled.div`
+  width: 100%;
+  max-height: 450px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  transform: skew(0deg, 0deg);
+  /* background: radial-gradient(circle,#e6e7e0 40%,rgba(43,42,161,.6) 110%);
+  mix-blend-mode: color-burn;
+  position: absolute;
+  width: 100vw;
+  height: 100vh; */
 `
 export const StyledNotFoundImg = styled.img`
   max-width: 800px;
   width: 100%;
+  position: absolute;
+  animation: 1s ${pulseAnimation} infinite 0s;
 `
 // #######################################################
 
