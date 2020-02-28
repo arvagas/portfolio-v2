@@ -807,7 +807,7 @@ export const StyledNotFoundContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background: rgba(0, 0, 0, 0.4);
   position: relative;
   transform: skew(0deg, 0deg);
@@ -884,6 +884,30 @@ export const StyledNotFoundSubHeader = styled.h3`
   @media ${device.mobileS} {
     font-size: 3rem;
     -webkit-text-stroke: black 1px;
+  }
+`
+export const StyledNotFoundLink = styled(Link)`
+  color: white;
+  border: solid white 2px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 5px;
+  &:hover {
+    color: purple;
+    background-color: white;
+  }
+  @media ${device.mobileL} {
+    font-size: 1rem;
+  }
+`
+export const StyledNotFoundOr = styled.span`
+  color: white;
+  margin: 0 2rem;
+  font-size: 2rem;
+  @media ${device.mobileL} {
+    margin: 0 1rem;
+    font-size: 1rem;
   }
 `
 // #######################################################
