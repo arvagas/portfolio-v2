@@ -832,27 +832,6 @@ export const StyledNotFoundContainer = styled.div`
     max-height: 175px;
   }
 `
-export const StyledNotFoundImg = styled.img`
-  max-width: 800px;
-  width: 100%;
-  position: absolute;
-  animation: 1s ${pulseAnimation} infinite 0s;
-  @media ${device.laptop} {
-    max-width: 600px;
-  }
-  @media ${device.tablet} {
-    max-width: 400px;
-  }
-  @media ${device.mobileL} {
-    max-width: 350px;
-  }
-  @media ${device.mobileM} {
-    max-width: 325px;
-  }
-  @media ${device.mobileS} {
-    max-width: 300px;
-  }
-`
 // #######################################################
 
 // @@@@@@@@@@ Carousel
