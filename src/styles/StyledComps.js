@@ -808,7 +808,7 @@ export const StyledNotFoundContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   position: relative;
   transform: skew(0deg, 0deg);
   /* background: radial-gradient(circle,#e6e7e0 40%,rgba(43,42,161,.6) 110%);
@@ -817,10 +817,10 @@ export const StyledNotFoundContainer = styled.div`
   width: 100vw;
   height: 100vh; */
   @media ${device.laptop} {
-    max-height: 350px;
+    max-height: 400px;
   }
   @media ${device.tablet} {
-    max-height: 250px;
+    max-height: 350px;
   }
   @media ${device.mobileL} {
     max-height: 225px;
@@ -830,6 +830,60 @@ export const StyledNotFoundContainer = styled.div`
   }
   @media ${device.mobileS} {
     max-height: 175px;
+  }
+`
+export const StyledNotFoundMessageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: 1s ${pulseAnimation} infinite 0s;
+`
+export const StyledNotFoundHeader = styled.h2`
+  font-family: 'Pricedown';
+  font-size: 20rem;
+  color: red;
+  -webkit-text-stroke: black 8px;
+  @media ${device.laptop} {
+    font-size: 18rem;
+  }
+  @media ${device.tablet} {
+    font-size: 12rem;
+    -webkit-text-stroke: black 6px;
+  }
+  @media ${device.mobileL} {
+    font-size: 10rem;
+    -webkit-text-stroke: black 4px;
+  }
+  @media ${device.mobileM} {
+    font-size: 8rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 6rem;
+    -webkit-text-stroke: black 3px;
+  }
+`
+export const StyledNotFoundSubHeader = styled.h3`
+  font-family: 'Pricedown';
+  font-size: 10rem;
+  -webkit-text-stroke: black 4px;
+  color: red;
+  @media ${device.laptop} {
+    font-size: 8rem;
+  }
+  @media ${device.tablet} {
+    font-size: 6rem;
+    -webkit-text-stroke: black 3px;
+  }
+  @media ${device.mobileL} {
+    font-size: 5rem;
+    -webkit-text-stroke: black 2px;
+  }
+  @media ${device.mobileM} {
+    font-size: 4rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 3rem;
+    -webkit-text-stroke: black 1px;
   }
 `
 // #######################################################
