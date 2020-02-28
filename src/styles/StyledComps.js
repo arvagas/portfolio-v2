@@ -1,6 +1,6 @@
 // library imports
 import styled, { keyframes, css } from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import ReactGA from 'react-ga'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fadeIn, fadeInDown, fadeInLeft, fadeInRight, fadeOutLeft, fadeOutRight, rollIn, pulse } from 'react-animations'
@@ -253,7 +253,7 @@ export const StyledSocialLink = styled(ReactGA.OutboundLink)`
     padding: 6px;
   }
 `
-export const StyledContactLink = styled(NavLink)`
+export const StyledContactLink = styled(Link)`
   border-radius: 50%;
   background-color: white;
   padding: 8px;
