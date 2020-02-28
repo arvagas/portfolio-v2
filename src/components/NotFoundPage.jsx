@@ -1,15 +1,36 @@
 // library imports
 import React from 'react'
-// image import
-import fourzerofour from '../assets/404.png'
 // styles
-import { StyledNotFoundPage, StyledNotFoundContainer, StyledNotFoundImg } from '../styles/StyledComps'
+import { StyledNotFoundPage, StyledNotFoundContainer, StyledNotFoundMessageContainer, StyledNotFoundHeader, StyledNotFoundSubHeader, StyledNotFoundLink, StyledNotFoundOr } from '../styles/StyledComps'
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ history }) => {
+  const renderOptions = () => {
+    if (history.location.state && history.location.state.hasOwnProperty('prevPage') && history.location.state.prevPage !== '/') {
+      return (
+        <div>
+          <StyledNotFoundLink to='/'>Go Home</StyledNotFoundLink>
+          <StyledNotFoundOr>OR</StyledNotFoundOr>
+          <StyledNotFoundLink to={history.location.state.prevPage}>Go Back</StyledNotFoundLink>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <StyledNotFoundLink to='/'>Go Home</StyledNotFoundLink>
+        </div>
+      )
+    }
+  }
+
   return (
     <StyledNotFoundPage>
       <StyledNotFoundContainer>
-        <StyledNotFoundImg src={fourzerofour} alt='Page Not Found'/>
+        <StyledNotFoundMessageContainer>
+          <StyledNotFoundHeader>404</StyledNotFoundHeader>
+          <StyledNotFoundSubHeader>Page Not Found</StyledNotFoundSubHeader>
+        </StyledNotFoundMessageContainer>
+
+        {renderOptions()}
       </StyledNotFoundContainer>
     </StyledNotFoundPage>
   )

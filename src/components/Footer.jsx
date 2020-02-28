@@ -1,5 +1,6 @@
 // library imports
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
@@ -12,6 +13,7 @@ import { StyledFooter, StyledSocialContainer, StyledProfileImage, StyledSocialLi
 
 const Footer = () => {
   let { windowWidth } = useWindowDimensions()
+  let history = useHistory()
 
   const determineSize = () => {
     if (windowWidth <= 425) return '2x'
@@ -31,7 +33,14 @@ const Footer = () => {
           <FontAwesomeIcon icon={faLinkedinIn} size={determineSize()} title='Visit LinkedIn'/>
         </StyledSocialLink>
 
-        <StyledContactLink to='/contact' delay='4s'>
+        <StyledContactLink
+          to={{
+            pathname: '/contact',
+            state: {
+              prevPage: history.location.pathname
+            }
+          }}
+          delay='4s'>
           <FontAwesomeIcon icon={faEnvelope} size={determineSize()} title='Email Arvin'/>
         </StyledContactLink>
       </StyledSocialContainer>

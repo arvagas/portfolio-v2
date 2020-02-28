@@ -1,5 +1,7 @@
 // library imports
 import { createGlobalStyle } from 'styled-components'
+// font import
+import pricedown from '../fonts/Typodermic-PricedownBl-Regular.otf'
 
 export const GlobalStyle = createGlobalStyle`
   /* Meyer Reset */
@@ -47,6 +49,11 @@ export const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
   }
   /* End of Reset */
+
+  @font-face {
+    font-family: 'Pricedown';
+    src: url(${pricedown});
+  }
 
   * {
     box-sizing: border-box;
