@@ -36,13 +36,17 @@ const ProjectsCard = ({ project }) => {
             </StyledCardLink>
           )}
 
-          <StyledCardLink href={project.github} target='_blank' rel='noopener noreferrer'>
-            <StyledFontAwesomeIcon icon={faCode} size='2x' title='View Code'/>
-          </StyledCardLink>
-
-          <StyledCardLink href={project.deploy} target='_blank' rel='noopener noreferrer'>
-            <StyledFontAwesomeIcon icon={faExternalLinkAlt} size='2x'  title='View Site'/>
-          </StyledCardLink>
+          {!project.github ? '' : (
+            <StyledCardLink href={project.github} target='_blank' rel='noopener noreferrer'>
+              <StyledFontAwesomeIcon icon={faCode} size='2x' title='View Code'/>
+            </StyledCardLink>
+          )}
+          
+          {!project.deploy ? '' : (
+            <StyledCardLink href={project.deploy} target='_blank' rel='noopener noreferrer'>
+              <StyledFontAwesomeIcon icon={faExternalLinkAlt} size='2x'  title='View Site'/>
+            </StyledCardLink>
+          )}
         </div>
       </StyledCardBottom>
 

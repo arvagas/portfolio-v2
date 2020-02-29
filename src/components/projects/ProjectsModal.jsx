@@ -48,13 +48,17 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
           </StyledModalLink>
         )}
 
-        <StyledModalLink href={project.github} target='_blank' rel='noopener noreferrer'>
-          <FontAwesomeIcon icon={faCode} size={determineSize()} title='View Code'/>
-        </StyledModalLink>
+        {!project.github ? '' : (
+          <StyledModalLink href={project.github} target='_blank' rel='noopener noreferrer'>
+            <FontAwesomeIcon icon={faCode} size={determineSize()} title='View Code'/>
+          </StyledModalLink>
+        )}
 
-        <StyledModalLink href={project.deploy} target='_blank' rel='noopener noreferrer'>
-          <FontAwesomeIcon icon={faExternalLinkAlt} size={determineSize()} title='View Site'/>
-        </StyledModalLink>
+        {!project.deploy ? '' : (
+          <StyledModalLink href={project.deploy} target='_blank' rel='noopener noreferrer'>
+            <FontAwesomeIcon icon={faExternalLinkAlt} size={determineSize()} title='View Site'/>
+          </StyledModalLink>
+        )}
       </StyledModalBottom>
     </StyledProjectsModal>
   )
