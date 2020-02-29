@@ -430,13 +430,14 @@ export const StyledProjectsModal = styled.div`
   }
   @media ${device.mobileL} {
     max-width: 400px;
-    max-height: 500px;
+    max-height: 550px;
   }
   @media ${device.mobileM} {
     max-width: 350px;
   }
   @media ${device.mobileS} {
     max-width: 300px;
+    max-height: 500px;
   }
 `
 export const StyledModalX = styled.div`
