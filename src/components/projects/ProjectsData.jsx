@@ -1,4 +1,6 @@
 // image imports
+import treasurehunt from '../../assets/projects/treasurehunt.png'
+import treasurehuntThumb from '../../assets/projects/treasurehuntThumb.jpg'
 import spacemudPhoto from '../../assets/projects/spacemud.png'
 import spacemudPhotoThumb from '../../assets/projects/spacemudThumb.jpg'
 import appraiserbffPhoto from '../../assets/projects/appraiserbff.png'
@@ -11,29 +13,27 @@ import immunizationtrackerPhoto from '../../assets/projects/immunizationtracker.
 import immunizationtrackerThumb from '../../assets/projects/immunizationtrackerThumb.jpg'
 
 export const ProjectsData = [
-  // {
-  //   title: '',
-  //   desc: "",
-  //   resp: [
-  //     '',
-  //     '',
-  //     ''
-  //   ],
-  //   deploy: '',
-  //   github: '',
-  //   mockup: '',
-  //   tech: [
-  //     '',
-  //     '',
-  //     ''
-  //   ],
-  //   photo: '',
-  //   photoAlt: 'Landing page of ',
-  //   thumb: '',
-  //   thumbAlt: 'Blurred thumbnail of ',
-  //   gif: '',
-  //   gifAlt: 'Brief demo of ',
-  // },
+  {
+    title: 'Treasure Hunt',
+    desc: "A game designed as a competitive race to gather the most amount of artifacts and gold in a set time. Users can explore the map and interact with others, but the primary objective is to collect the most artifacts/gold to reach the top of the leaderboards.",
+    resp: [
+      'Created an algorithm to traverse an unknown map and stored room information accordingly.',
+      'Optimized player movement to reduce unnecessary actions and avoid cooldown penalties.',
+      'Multiple scripts created to allow player to automate tasks within the world.'
+    ],
+    deploy: '',
+    github: 'https://github.com/Team-Nowhere',
+    mockup: '',
+    tech: [
+      'Python',
+    ],
+    photo: treasurehunt,
+    photoAlt: 'Landing page of Treasure Hunt',
+    thumb: treasurehuntThumb,
+    thumbAlt: 'Blurred thumbnail of Treasure Hunt',
+    gif: '',
+    gifAlt: 'Brief demo of Treasure Hunt',
+  },
   {
     title: 'Space MUD',
     desc: "A one-week project, Space MUD is a randomly generated multi-user dungeon experience set in an abandoned spacecraft.",
@@ -51,13 +51,13 @@ export const ProjectsData = [
       'Styled-Components',
       'Python',
       'Django',
-      'Pusher'
+      'Pusher',
     ],
     photo: spacemudPhoto,
     photoAlt: 'Landing page of Space MUD',
     thumb: spacemudPhotoThumb,
     thumbAlt: 'Blurred thumbnail of Space MUD',
-    gif: spacemudPhoto,
+    gif: '',
     gifAlt: 'Brief demo of Space MUD',
   },
   {
@@ -83,7 +83,7 @@ export const ProjectsData = [
     photoAlt: 'Landing page of Appraiser BFF',
     thumb: appraiserbffPhotoThumb,
     thumbAlt: 'Blurred thumbnail of Appraiser BFF',
-    gif: appraiserbffPhoto,
+    gif: '',
     gifAlt: 'Brief demo of Appraiser BFF',
   },
   {
@@ -107,7 +107,7 @@ export const ProjectsData = [
     photoAlt: 'Landing page of Better Business',
     thumb: betterbusinessPhotoThumb,
     thumbAlt: 'Blurred thumbnail of Better Business',
-    gif: betterbusinessPhoto,
+    gif: '',
     gifAlt: 'Brief demo of Better Business',
   },
   {
@@ -131,7 +131,7 @@ export const ProjectsData = [
     photoAlt: 'Landing page of Airlytics',
     thumb: airlyticsPhotoThumb,
     thumbAlt: 'Blurred thumbnail of Airlytics',
-    gif: airlyticsPhoto,
+    gif: '',
     gifAlt: 'Brief demo of Airlytics',
   },
   {
@@ -149,13 +149,13 @@ export const ProjectsData = [
       'HTML',
       'CSS',
       'JavaScript',
-      'jQuery'
+      'jQuery',
     ],
     photo: immunizationtrackerPhoto,
     photoAlt: 'Landing page of Immunization Tracker',
     thumb: immunizationtrackerThumb,
     thumbAlt: 'Blurred thumbnail of Immunization Tracker',
-    gif: immunizationtrackerPhoto,
+    gif: '',
     gifAlt: 'Brief demo of Immunization Tracker',
   },
 ]
