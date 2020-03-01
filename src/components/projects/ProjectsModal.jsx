@@ -20,7 +20,7 @@ const ProjectsModal = ({ project, showModal, handleModal }) => {
     <StyledProjectsModal>
       <StyledModalTitle>{project.title}</StyledModalTitle>
       <StyledModalX onClick={event => handleModal(event)}>X</StyledModalX>
-      <StyledModalPhoto src={project.gif ? project.gif : project.photo} alt={project.gifAlt ? project.gifAlt : project.gifPhoto}/>
+      <StyledModalPhoto src={project.gif ? project.gif : project.photo} alt={project.gif ? project.gifAlt : project.gifPhoto}/>
 
       <StyledModalMiddle>
         <div>
