@@ -1037,4 +1037,10 @@ export const StyledCarouselFAIWrapper = styled.div`
     height: 30px;
   }
 `
+export const StyledCarouselEndDivider = styled.div`
+  align-self: center;
+  background-color: white;
+  height: 200px;
+  width: 2px;
+`
 // #######################################################

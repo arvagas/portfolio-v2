@@ -5,7 +5,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 // custom hook imports
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 // styling
-import { StyledCarousel, StyledCarouselMain, StyledCarouselCardsContainer, StyledCarouselCard, StyledCarouselFAIWrapper } from '../../styles/StyledComps'
+import { StyledCarousel, StyledCarouselMain, StyledCarouselCardsContainer, StyledCarouselCard, StyledCarouselFAIWrapper, StyledCarouselEndDivider } from '../../styles/StyledComps'
 // context api
 import { ProjectIndicesContext } from '../../contexts/ProjectIndicesContext'
 
@@ -127,26 +127,6 @@ const Carousel = (props) => {
       else return ''
     }
   }
-  
-  const renderCards = () => {
-    return (
-      <>
-        {Children.map(children, (child, index) => (
-          <StyledCarouselCard
-            style={{
-              display: determineDisplay(index),
-              order: determineOrder(index),
-              position: determinePosition(index),
-              right: determineRight(index),
-            }}
-            animation={determineAnimation(index)}
-          >
-            {child}
-          </StyledCarouselCard>
-        ))}
-      </>
-    )
-  }
 
   // needs optimization
   const handleLeftChange = () => {
@@ -204,6 +184,28 @@ const Carousel = (props) => {
     setAnimType('right')
   }
 
+  const renderEndDivider = (index) => {
+    if (windowWidth <= 425) return
+    else if (windowWidth > 425 && windowWidth <= 1024) {
+      if (index === compCount-1 && index === leftIndex) {
+        return (
+          <StyledCarouselEndDivider style={{order: determineOrder(index)}}/>
+        )
+      }
+    } else {
+      if (index === compCount-1 && (index === leftIndex || index === middleIndex)) {
+        return (
+          <StyledCarouselEndDivider
+            style={{
+              order: determineOrder(index),
+              animation: determineAnimation(index)
+            }}
+          />
+        )
+      }
+    }
+  }
+
   return (
     <StyledCarousel>
       <StyledCarouselMain>
@@ -212,7 +214,22 @@ const Carousel = (props) => {
         </StyledCarouselFAIWrapper>
 
         <StyledCarouselCardsContainer>
-          {renderCards()}
+          {Children.map(children, (child, index) => (
+            <>
+              <StyledCarouselCard
+                style={{
+                  display: determineDisplay(index),
+                  order: determineOrder(index),
+                  position: determinePosition(index),
+                  right: determineRight(index),
+                }}
+                animation={determineAnimation(index)}
+              >
+                {child}
+              </StyledCarouselCard>
+              {renderEndDivider(index)}
+            </>
+          ))}
         </StyledCarouselCardsContainer>
         
         <StyledCarouselFAIWrapper onClick={()=>handleRightChange()}>
