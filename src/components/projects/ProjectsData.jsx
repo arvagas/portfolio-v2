@@ -1,14 +1,16 @@
 // image imports
-import treasurehunt from '../../assets/projects/treasurehunt.png'
+import treasurehuntPhoto from '../../assets/projects/treasurehunt.png'
 import treasurehuntThumb from '../../assets/projects/treasurehuntThumb.jpg'
 import spacemudPhoto from '../../assets/projects/spacemud.png'
-import spacemudPhotoThumb from '../../assets/projects/spacemudThumb.jpg'
+import spacemudThumb from '../../assets/projects/spacemudThumb.jpg'
+import projectfireflyPhoto from '../../assets/projects/projectfirefly.png'
+import projectfireflyThumb from '../../assets/projects/projectfireflyThumb.jpg'
 import appraiserbffPhoto from '../../assets/projects/appraiserbff.png'
-import appraiserbffPhotoThumb from '../../assets/projects/appraiserbffThumb.jpg'
+import appraiserbffThumb from '../../assets/projects/appraiserbffThumb.jpg'
 import betterbusinessPhoto from '../../assets/projects/betterbusiness.png'
-import betterbusinessPhotoThumb from '../../assets/projects/betterbusinessThumb.jpg'
+import betterbusinessThumb from '../../assets/projects/betterbusinessThumb.jpg'
 import airlyticsPhoto from '../../assets/projects/airlytics.png'
-import airlyticsPhotoThumb from '../../assets/projects/airlyticsThumb.jpg'
+import airlyticsThumb from '../../assets/projects/airlyticsThumb.jpg'
 import immunizationtrackerPhoto from '../../assets/projects/immunizationtracker.png'
 import immunizationtrackerThumb from '../../assets/projects/immunizationtrackerThumb.jpg'
 
@@ -27,7 +29,7 @@ export const ProjectsData = [
     tech: [
       'Python',
     ],
-    photo: treasurehunt,
+    photo: treasurehuntPhoto,
     photoAlt: 'Landing page of Treasure Hunt',
     thumb: treasurehuntThumb,
     thumbAlt: 'Blurred thumbnail of Treasure Hunt',
@@ -55,10 +57,36 @@ export const ProjectsData = [
     ],
     photo: spacemudPhoto,
     photoAlt: 'Landing page of Space MUD',
-    thumb: spacemudPhotoThumb,
+    thumb: spacemudThumb,
     thumbAlt: 'Blurred thumbnail of Space MUD',
     gif: '',
     gifAlt: 'Brief demo of Space MUD',
+  },
+  {
+    title: 'Project Firefly',
+    desc: "The goal of Project Firefly is to introduce coding/programming concepts to young children via interesting visuals and effortless controls.",
+    resp: [
+      'Integrated Google and Facebook login via Firebase.',
+      'User onboarding was separated from the game application to better streamline the flow of data.',
+      'Stripe and Zendesk were integrated into the app to get it business ready.',
+      'Custom forum was created to foster a community around the game.'
+    ],
+    deploy: 'https://lambda-school-labs.github.io/project-firefly-site/',
+    github: 'https://github.com/Lambda-School-Labs/project-firefly-site',
+    mockup: '',
+    tech: [
+      'React',
+      'Stripe',
+      'Zendesk',
+      'Firebase (Authentication)',
+      'MongoDB',
+    ],
+    photo: projectfireflyPhoto,
+    photoAlt: 'Landing page of Project Firefly',
+    thumb: projectfireflyThumb,
+    thumbAlt: 'Blurred thumbnail of Project Firefly',
+    gif: '',
+    gifAlt: 'Brief demo of Project Firefly',
   },
   {
     title: 'Appraiser BFF',
@@ -81,7 +109,7 @@ export const ProjectsData = [
     ],
     photo: appraiserbffPhoto,
     photoAlt: 'Landing page of Appraiser BFF',
-    thumb: appraiserbffPhotoThumb,
+    thumb: appraiserbffThumb,
     thumbAlt: 'Blurred thumbnail of Appraiser BFF',
     gif: '',
     gifAlt: 'Brief demo of Appraiser BFF',
@@ -105,7 +133,7 @@ export const ProjectsData = [
     ],
     photo: betterbusinessPhoto,
     photoAlt: 'Landing page of Better Business',
-    thumb: betterbusinessPhotoThumb,
+    thumb: betterbusinessThumb,
     thumbAlt: 'Blurred thumbnail of Better Business',
     gif: '',
     gifAlt: 'Brief demo of Better Business',
@@ -129,7 +157,7 @@ export const ProjectsData = [
     ],
     photo: airlyticsPhoto,
     photoAlt: 'Landing page of Airlytics',
-    thumb: airlyticsPhotoThumb,
+    thumb: airlyticsThumb,
     thumbAlt: 'Blurred thumbnail of Airlytics',
     gif: '',
     gifAlt: 'Brief demo of Airlytics',
