@@ -43,11 +43,56 @@ const Carousel = (props) => {
     setCompCount(Children.count(children))
   }, [isCreated, setIsCreated, setLeftIndex, setMiddleIndex, setRightIndex, setNextIndex, setPrevIndex, children])
 
-  const orderCards = (index) => {
+  const determineDisplay = (index) => {
+    if (windowWidth <= 425) {
+      if (index === leftIndex || (index === prevIndex && animType === 'right') || (index === middleIndex && animType === 'left')) return
+      else return 'none'
+    }
+    else if (windowWidth <= 1024) {
+      if (index === leftIndex || index === middleIndex || (index === prevIndex && animType === 'right') || (index === rightIndex && animType === 'left')) return
+      else return 'none'
+    }
+    else {
+      if (index === leftIndex || index === middleIndex || index === rightIndex || (index === prevIndex && animType === 'right') || (index === nextIndex && animType === 'left')) return
+      else return 'none'
+    }
+  }
+
+  const determineOrder = (index) => {
     if (index === leftIndex) return 1
     else if (index === middleIndex) return 2
     else if (index === rightIndex) return 3
     else return 0
+  }
+
+  const determinePosition = (index) => {
+    if (windowWidth <= 425) {
+      if (index === prevIndex || index === middleIndex) return 'absolute'
+      else return
+    }
+    else if (windowWidth <= 1024) {
+      if (index === prevIndex || index === rightIndex) return 'absolute'
+      else return
+    }
+    else {
+      if (index === prevIndex || index === nextIndex) return 'absolute'
+      else return
+    }
+  }
+
+  const determineRight = (index) => {
+    if (windowWidth <= 425) {
+      if (index === middleIndex) return 0
+      else return
+    }
+    else if (windowWidth <= 1024) {
+      if (index === rightIndex) return 0
+      else return
+    }
+    else {
+      if (index === nextIndex) return 0
+      else return
+    }
   }
 
   const determineSize = () => {
@@ -84,61 +129,23 @@ const Carousel = (props) => {
   }
   
   const renderCards = () => {
-    if (windowWidth <= 425) {
-      return (
-        <StyledCarouselCardsContainer>
-          {Children.map(children, (child, index) => (
-            <StyledCarouselCard
-              style={{
-                display: index === leftIndex || (index === prevIndex && animType === 'right') || (index === middleIndex && animType === 'left') ? '' : 'none',
-                order: orderCards(index),
-                position: index === prevIndex || index === middleIndex ? 'absolute': '',
-                right: index === middleIndex ? 0 : '',
-              }}
-              animation={determineAnimation(index)}
-            >
-              {child}
-            </StyledCarouselCard>
-          ))}
-        </StyledCarouselCardsContainer>
-      )
-    } else if (windowWidth <= 1024) {
-      return (
-        <StyledCarouselCardsContainer>
-          {Children.map(children, (child, index) => (
-            <StyledCarouselCard
-              style={{
-                display: index === leftIndex || index === middleIndex || (index === prevIndex && animType === 'right') || (index === rightIndex && animType === 'left') ? '' : 'none',
-                order: orderCards(index),
-                position: index === prevIndex || index === rightIndex ? 'absolute': '',
-                right: index === rightIndex ? 0 : '',
-              }}
-              animation={determineAnimation(index)}
-            >
-              {child}
-            </StyledCarouselCard>
-          ))}
-        </StyledCarouselCardsContainer>
-      )
-    } else {
-      return (
-        <StyledCarouselCardsContainer>
-          {Children.map(children, (child, index) => (
-            <StyledCarouselCard
-              style={{
-                display: index === leftIndex || index === middleIndex || index === rightIndex || (index === prevIndex && animType === 'right') || (index === nextIndex && animType === 'left') ? '' : 'none',
-                order: orderCards(index),
-                position: index === prevIndex || index === nextIndex ? 'absolute': '',
-                right: index === nextIndex ? 0 : '',
-              }}
-              animation={determineAnimation(index)}
-            >
-              {child}
-            </StyledCarouselCard>
-          ))}
-        </StyledCarouselCardsContainer>
-      )
-    } 
+    return (
+      <>
+        {Children.map(children, (child, index) => (
+          <StyledCarouselCard
+            style={{
+              display: determineDisplay(index),
+              order: determineOrder(index),
+              position: determinePosition(index),
+              right: determineRight(index),
+            }}
+            animation={determineAnimation(index)}
+          >
+            {child}
+          </StyledCarouselCard>
+        ))}
+      </>
+    )
   }
 
   // needs optimization
@@ -204,8 +211,10 @@ const Carousel = (props) => {
           <FontAwesomeIcon icon={faChevronLeft} size={determineSize()} title='Previous Project'/>
         </StyledCarouselFAIWrapper>
 
-        {renderCards()}
-
+        <StyledCarouselCardsContainer>
+          {renderCards()}
+        </StyledCarouselCardsContainer>
+        
         <StyledCarouselFAIWrapper onClick={()=>handleRightChange()}>
           <FontAwesomeIcon icon={faChevronRight} size={determineSize()} title='Next Project'/>
         </StyledCarouselFAIWrapper>

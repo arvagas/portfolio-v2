@@ -78,7 +78,7 @@ export const ProjectsData = [
       'React',
       'Stripe',
       'Zendesk',
-      'Firebase (Authentication)',
+      'Firebase',
       'MongoDB',
     ],
     photo: projectfireflyPhoto,
