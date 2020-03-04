@@ -67,9 +67,9 @@ export const ProjectsData = [
     desc: "The goal of Project Firefly is to introduce coding/programming concepts to young children via interesting visuals and effortless controls.",
     resp: [
       'Integrated Google and Facebook login via Firebase.',
-      'User onboarding was separated from the game application to better streamline the flow of data.',
-      'Stripe and Zendesk were integrated into the app to get it business ready.',
-      'Custom forum was created to foster a community around the game.'
+      'Separated user onboarding from the game application to better streamline the flow of data.',
+      'Integrated Stripe and Zendesk into the app to get it business ready.',
+      'Created custom forum to foster a community around the game.'
     ],
     deploy: 'https://lambda-school-labs.github.io/project-firefly-site/',
     github: 'https://github.com/Lambda-School-Labs/project-firefly-site',
